@@ -3,33 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Gascón Navarro</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Alex Gascón Navarro Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <header>
     <h1>Alex Gascón Navarro</h1>
-    <p>Telecommunications Engineer | Data Science & Sports Analytics Enthusiast</p>
+    <p>Telecommunications Engineer | Data Scientist | Sports Analytics Enthusiast</p>
   </header>
-  <section>
-    <h2>About Me</h2>
-    <p>Passionate about machine learning and sports analytics. Skilled in Python, SQL, and data visualization.</p>
-    <p>Open to international opportunities for professional growth.</p>
-  </section>
-  <section>
-    <h2>Professional Experience</h2>
-    <ul>
-      <li><strong>Network Engineer</strong> at INDRA (2023 - Present)</li>
-      <li><strong>Full-Stack Developer (Internship)</strong> at AXIANS - ITNOW (2022 - 2023)</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Contact</h2>
-    <p>Email: alex.gascon1999@gmail.com</p>
+
+  <main>
+    <!-- Profile Section -->
+    <section id="profile">
+      <h2>About Me</h2>
+      <p>
+        I am a Telecommunications Engineer with expertise in Data Science and Sports Analytics. 
+        Skilled in Python, SQL, and data visualization, I’m passionate about applying machine learning 
+        and analytics to sports and other industries. Currently pursuing postgraduate studies in Sports Analytics at UPC.
+      </p>
+      <h3>Technologies:</h3>
+      <ul>
+        <li>Python</li>
+        <li>SQL</li>
+        <li>Spark</li>
+        <li>Docker</li>
+        <li>Linux</li>
+        <li>Data Visualization</li>
+      </ul>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+      <h2>Education & Career</h2>
+      <div id="timeline-container">
+        <ul>
+          <li><strong>Postgraduate in Sports Analytics</strong> - UPC (2024 - 2025)</li>
+          <li><strong>Network Engineer</strong> - INDRA (2023 - Present)</li>
+          <li><strong>Full-Stack Developer Intern</strong> - AXIANS - ITNOW (2022 - 2023)</li>
+          <li><strong>Bachelor's Degree in Telecommunications Networks Engineering</strong> - UPF (2018 - 2023)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <!-- Professional Projects -->
+      <h3>Professional Projects</h3>
+      <div id="professional-projects" class="projects-grid">
+        <div class="project">
+          <h4>SDN Protocol Development</h4>
+          <p>Implemented and tested network protocols in SDN using Python and Docker at INDRA.</p>
+        </div>
+        <div class="project">
+          <h4>DNS Automation</h4>
+          <p>Optimized DNS functionality by automating processes with web services at AXIANS - ITNOW.</p>
+        </div>
+      </div>
+
+      <!-- Personal Projects -->
+      <h3>Personal Projects</h3>
+      <div id="personal-projects" class="projects-grid">
+        <div class="project">
+          <h4>Football Analytics Dashboard</h4>
+          <p>Built an interactive dashboard using Python and Dash to visualize football player and team statistics.</p>
+        </div>
+        <div class="project">
+          <h4>Machine Learning in Sports</h4>
+          <p>Applied clustering and regression models to predict player performance metrics.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: <a href="mailto:alex.gascon1999@gmail.com">alex.gascon1999@gmail.com</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/alex-gascon-navarro">linkedin.com/in/alex-gascon-navarro</a></p>
     <p>GitHub: <a href="https://github.com/alexgasconn">github.com/alexgasconn</a></p>
     <p><a href="CV.pdf" download>Download my CV</a></p>
+    <p>© 2024 Alex Gascón Navarro</p>
+  </footer>
 
-  </section>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
