@@ -24,5 +24,12 @@ I am **Alex Gascón Navarro**, a Telecommunications Engineer with a strong focus
 
 ---
 
-## 📂 Repository Structure
+## 📈 Technologies Used
+
+- **HTML5**: Markup for the structure of the website.
+- **CSS3**: Styling for an elegant and responsive design.
+- **JavaScript**: (Optional) Adding interactivity to the site.
+- **GitHub Pages**: Hosting the static website.
+
+---
 
