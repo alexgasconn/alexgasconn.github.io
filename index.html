@@ -3,27 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Gascón Navarro | Portfolio & CV</title>
+  <title>Alex Gascón Navarro | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>Alex Gascón Navarro</h1>
     <p>Telecommunications Engineer | Data Scientist | Sports Analytics Enthusiast</p>
+    <div class="buttons">
+      <a href="#projects" class="btn">Projects</a>
+      <a href="https://www.linkedin.com/in/alex-gascon-navarro" class="btn" target="_blank">LinkedIn</a>
+      <a href="https://medium.com/@alex.gascon1999" class="btn" target="_blank">Medium</a>
+      <a href="https://github.com/alexgasconn" class="btn" target="_blank">GitHub</a>
+    </div>
   </header>
 
   <main>
-    <!-- Profile Section -->
     <section id="profile">
       <h2>About Me</h2>
       <p>
-        I am a Telecommunications Engineer with expertise in Data Science and Sports Analytics. 
-        Skilled in Python, SQL, and data visualization, I’m passionate about applying machine learning 
-        and analytics to sports and other industries. Currently pursuing postgraduate studies in Sports Analytics at UPC.
+        I am a Telecommunications Engineer with expertise in Data Science and Sports Analytics. Skilled in Python, SQL, and data visualization, I’m passionate about applying machine learning and analytics to sports and other industries. Currently pursuing postgraduate studies in Sports Analytics at UPC.
       </p>
     </section>
 
-    <!-- Technical Skills Section -->
     <section id="technical-skills">
       <h2>Technical Knowledge & Skills</h2>
 
@@ -68,7 +71,6 @@
       </ul>
     </section>
 
-    <!-- Education & Certifications Section -->
     <section id="education">
       <h2>Education & Certifications</h2>
       <ul>
@@ -85,7 +87,6 @@
       </ul>
     </section>
 
-    <!-- Professional Experience Section -->
     <section id="experience">
       <h2>Professional Experience</h2>
       <div class="experience">
@@ -114,7 +115,6 @@
       </div>
     </section>
 
-    <!-- Languages Section -->
     <section id="languages">
       <h2>Languages</h2>
       <ul>
@@ -125,35 +125,56 @@
       </ul>
     </section>
 
-<!-- Projects Section -->
-<section id="projects">
-  <h2>Projects & Interests</h2>
-  <div class="projects-grid">
-    <!-- Strava Training Dashboard -->
-    <div class="project">
-      <h3>Strava Training Dashboard</h3>
-      <p>Developed an interactive Streamlit dashboard to visualize and analyze personal Strava activity data, providing insights into training patterns across various sports.</p>
-      <p><a href="https://github.com/alexgasconn/Strava-dashboard" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-    </div>
-    <!-- Google Timeline Heatmap -->
-    <div class="project">
-      <h3>Google Timeline Heatmap</h3>
-      <p>Created a visualization tool using Python and Folium to generate interactive heatmaps from Google Timeline data, showcasing travel patterns and location history.</p>
-      <p><a href="https://github.com/alexgasconn/timeline" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-    </div>
-    <!-- Player Recommender System -->
-    <div class="project">
-      <h3>Player Recommender System</h3>
-      <p>Designed a recommendation system that suggests football players with similar performance metrics and playing styles, utilizing machine learning techniques such as clustering and nearest-neighbor algorithms.</p>
-      <p><a href="https://github.com/alexgasconn/player-recommender" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-    </div>
-    <!-- Expected Goals (xG) Regression Model -->
-    <div class="project">
-      <h3>Expected Goals (xG) Regression Model</h3>
-      <p>Developed a logistic regression model to estimate expected goals in football, incorporating advanced feature engineering and SHAP analysis to quantify goal-scoring probabilities.</p>
-      <p><a href="https://github.com/alexgasconn/xG-Regression-Model" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-    </div>
-  </div>
-</section>
+    <section id="projects">
+      <h2>Projects & Interests</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>Strava Training Dashboard</h3>
+          <p>Interactive Streamlit dashboard for analyzing Strava activities by sport.</p>
+          <p><a href="https://github.com/alexgasconn/Strava-dashboard" target="_blank">View on GitHub</a></p>
+        </div>
+        <div class="project">
+          <h3>Google Timeline Heatmap</h3>
+          <p>Python + Folium tool for visualizing personal travel patterns from Google Timeline data.</p>
+          <p><a href="https://github.com/alexgasconn/timeline" target="_blank">View on GitHub</a></p>
+        </div>
+        <div class="project">
+          <h3>Player Recommender System</h3>
+          <p>PCA and clustering-based tool to recommend similar football players by style.</p>
+          <p><a href="https://github.com/alexgasconn/player-recommender" target="_blank">View on GitHub</a></p>
+        </div>
+        <div class="project">
+          <h3>Expected Goals (xG) Model</h3>
+          <p>Logistic regression + SHAP to estimate goal probability in football.</p>
+          <p><a href="https://github.com/alexgasconn/xG-Regression-Model" target="_blank">View on GitHub</a></p>
+        </div>
+        <div class="project">
+          <h3>RaceTime Predictor</h3>
+          <p>Streamlit app to estimate future race times using the Riegel formula.</p>
+          <p><a href="https://alexgasconn.github.io/RaceTimePredictor/" target="_blank">Try it live</a></p>
+        </div>
+        <div class="project">
+          <h3>Real-Time Network Metrics</h3>
+          <p>Java app capturing OONF metrics and exporting data to Valkey.</p>
+          <p><a href="https://github.com/alexgasconn/OONF-Valkey-Metrics" target="_blank">View on GitHub</a></p>
+        </div>
+      </div>
+    </section>
 
- 
+    <section id="more">
+      <h2>More</h2>
+      <ul>
+        <li>Open to relocation</li>
+        <li>Driving licence (5+ years)</li>
+        <li>Teamworker, problem solver, analytical thinker</li>
+        <li>International experience</li>
+        <li>Focused on Data Science & Sports Analytics</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with passion by Alex Gascón — 2025</p>
+  </footer>
+</body>
+</html>
