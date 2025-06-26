@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alex Gascón Navarro | Portfolio</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -124,7 +125,39 @@
         <li><strong>German:</strong> Basic (A1)</li>
       </ul>
     </section>
-
+    <section id="projects">
+  <h2>Mis Proyectos</h2>
+  <div class="projects-grid">
+    <!-- EJEMPLO DE TARJETA DE PROYECTO -->
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image">
+        <!-- ¡AQUÍ VA TU IMAGEN O GIF DEL PROYECTO! -->
+        <img src="path/to/strava-dashboard.gif" alt="Strava Training Dashboard">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Strava Training Dashboard</h3>
+        <p class="project-description">
+          Dashboard interactivo para visualizar y analizar actividades de Strava, filtrando por tipo de deporte y métricas clave.
+        </p>
+        <ul class="project-tech-list">
+          <li>Python</li>
+          <li>Streamlit</li>
+          <li>Pandas</li>
+          <li>API</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/alexgasconn/Strava-dashboard" target="_blank" title="Código en GitHub">
+            <svg><!-- SVG del icono de GitHub --></svg>
+          </a>
+          <a href="URL_DE_LA_DEMO_EN_VIVO" target="_blank" title="Ver Demo en Vivo">
+            <svg><!-- SVG del icono de enlace externo --></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Repite para los otros proyectos -->
+  </div>
+</section>
     <section id="projects">
       <h2>Projects & Interests</h2>
       <div class="projects-grid">
@@ -176,5 +209,12 @@
   <footer>
     <p>Made with passion by Alex Gascón — 2025</p>
   </footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 750, // Duración de la animación
+    once: true,    // Animar solo una vez
+  });
+</script>
 </body>
 </html>
