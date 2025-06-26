@@ -1,220 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Gascón Navarro | Portfolio</title>
+  <title>Alex Gascón Navarro | Data Science & Sports Analytics</title>
+  
+  <!-- Estilos y Fuentes -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Alex Gascón Navarro</h1>
-    <p>Telecommunications Engineer | Data Scientist | Sports Analytics Enthusiast</p>
-    <div class="buttons">
-      <a href="#projects" class="btn">Projects</a>
-      <a href="https://www.linkedin.com/in/alex-gascon-navarro" class="btn" target="_blank">LinkedIn</a>
-      <a href="https://medium.com/@alex.gascon1999" class="btn" target="_blank">Medium</a>
-      <a href="https://github.com/alexgasconn" class="btn" target="_blank">GitHub</a>
-    </div>
-  </header>
 
-  <main>
-    <section id="profile">
-      <h2>About Me</h2>
-      <p>
-        I am a Telecommunications Engineer with expertise in Data Science and Sports Analytics. Skilled in Python, SQL, and data visualization, I’m passionate about applying machine learning and analytics to sports and other industries. Currently pursuing postgraduate studies in Sports Analytics at UPC.
-      </p>
-    </section>
-
-    <section id="technical-skills">
-      <h2>Technical Knowledge & Skills</h2>
-
-      <h3>Programming & Data Tools</h3>
-      <ul>
-        <li><strong>Languages:</strong> Python, SQL, Java, PHP, Bash</li>
-        <li><strong>Libraries & Frameworks:</strong> Pandas, NumPy, Scikit-learn, SHAP, XGBoost, Matplotlib, Seaborn</li>
-        <li><strong>Big Data:</strong> Apache Spark with Python, MongoDB</li>
-        <li><strong>Databases:</strong> SQL, MongoDB, Valkey (Redis-compatible)</li>
-        <li><strong>Automation:</strong> Python scripting, web services (REST APIs)</li>
-        <li><strong>DevOps Tools:</strong> Docker, Linux CLI, Git/GitHub</li>
-        <li><strong>Other:</strong> Prometheus, OONF (Open Overlay Network Framework)</li>
-      </ul>
-
-      <h3>Data Science & Analytics</h3>
-      <ul>
-        <li>Regression, clustering, decision trees, PCA, neural networks</li>
-        <li>Statistical inference & linear models</li>
-        <li>Data wrangling and preprocessing</li>
-        <li>Advanced data visualization</li>
-        <li>SHAP values for explainability</li>
-        <li>Cross-validation and model evaluation</li>
-        <li>Feature engineering and machine learning pipelines</li>
-      </ul>
-
-      <h3>Networking</h3>
-      <ul>
-        <li>Network protocol development (SDN)</li>
-        <li>DNS automation and web services</li>
-        <li>REST API design and integration</li>
-        <li>CCNA (Cisco Certified Network Associate)</li>
-      </ul>
-
-      <h3>Software & Platforms</h3>
-      <ul>
-        <li>Docker</li>
-        <li>Git + GitHub</li>
-        <li>Linux (server and CLI usage)</li>
-        <li>Prometheus for monitoring</li>
-        <li>Strava (data source for analytics dashboard)</li>
-        <li>Jira, Confluence (Agile Methodologies project tracking)</li>
-      </ul>
-    </section>
-
-    <section id="education">
-      <h2>Education & Certifications</h2>
-      <ul>
-        <li><strong>Postgraduate in Sports Analytics</strong> – UPC & FC Barcelona (2024–2025)</li>
-        <li><strong>Bachelor's in Telecommunications Networks Engineering</strong> – UPF (2018–2023)</li>
-      </ul>
-      <h3>Certifications:</h3>
-      <ul>
-        <li>CCNA (Cisco Certified Network Associate)</li>
-        <li>Python for Data Analysis and Visualization (Udemy)</li>
-        <li>Spark & Python for Big Data (Udemy)</li>
-        <li>The Complete SQL Bootcamp (Udemy)</li>
-        <li>SQL, Git, and Docker Bootcamps (Udemy)</li>
-      </ul>
-    </section>
-
-    <section id="experience">
-      <h2>Professional Experience</h2>
-      <div class="experience">
-        <h3>Network Engineer</h3>
-        <p><strong>Indra</strong> (2023 – Present)</p>
-        <ul>
-          <li>Developed and tested SDN protocols using Python and Docker.</li>
-          <li>Designed and integrated REST APIs for network automation.</li>
-          <li>Collaborated in Agile international projects utilizing Java.</li>
-        </ul>
-      </div>
-      <div class="experience">
-        <h3>Network Full-Stack Developer Intern</h3>
-        <p><strong>Axians – ITNOW</strong> (2022 – 2023)</p>
-        <ul>
-          <li>Automated DNS functionalities through web services using PHP and Python.</li>
-          <li>Managed Linux-based servers and implemented web service solutions.</li>
-        </ul>
-      </div>
-      <div class="experience">
-        <h3>Support Consultant</h3>
-        <p><strong>Framer</strong></p>
-        <ul>
-          <li>Provided user support and managed billing systems.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="languages">
-      <h2>Languages</h2>
-      <ul>
-        <li><strong>Spanish:</strong> Native</li>
-        <li><strong>Catalan:</strong> Native</li>
-        <li><strong>English:</strong> Fluent Professional level (B2) (preparing for C1)</li>
-        <li><strong>German:</strong> Basic (A1)</li>
-      </ul>
-    </section>
-    <section id="projects">
-  <h2>Mis Proyectos</h2>
-  <div class="projects-grid">
-    <!-- EJEMPLO DE TARJETA DE PROYECTO -->
-    <div class="project-card" data-aos="fade-up">
-      <div class="project-image">
-        <!-- ¡AQUÍ VA TU IMAGEN O GIF DEL PROYECTO! -->
-        <img src="path/to/strava-dashboard.gif" alt="Strava Training Dashboard">
-      </div>
-      <div class="project-content">
-        <h3 class="project-title">Strava Training Dashboard</h3>
-        <p class="project-description">
-          Dashboard interactivo para visualizar y analizar actividades de Strava, filtrando por tipo de deporte y métricas clave.
-        </p>
-        <ul class="project-tech-list">
-          <li>Python</li>
-          <li>Streamlit</li>
-          <li>Pandas</li>
-          <li>API</li>
-        </ul>
-        <div class="project-links">
-          <a href="https://github.com/alexgasconn/Strava-dashboard" target="_blank" title="Código en GitHub">
-            <svg><!-- SVG del icono de GitHub --></svg>
-          </a>
-          <a href="URL_DE_LA_DEMO_EN_VIVO" target="_blank" title="Ver Demo en Vivo">
-            <svg><!-- SVG del icono de enlace externo --></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- Repite para los otros proyectos -->
+  <!-- BARRA SOCIAL FIJA -->
+  <div class="social-sidebar">
+    <ul>
+      <li><a href="https://github.com/alexgasconn" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/alex-gascon-navarro" target="_blank" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li>
+      <li><a href="https://medium.com/@alex.gascon1999" target="_blank" title="Medium"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-medium"><path d="M5.5 12H4c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1.5c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2zM12.5 7H11c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h1.5c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM20 3h-1.5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H20c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></svg></a></li>
+    </ul>
   </div>
-</section>
-    <section id="projects">
-      <h2>Projects & Interests</h2>
-      <div class="projects-grid">
-        <div class="project">
-          <h3>Strava Training Dashboard</h3>
-          <p>Interactive Streamlit dashboard for analyzing Strava activities by sport.</p>
-          <p><a href="https://github.com/alexgasconn/Strava-dashboard" target="_blank">View on GitHub</a></p>
-        </div>
-        <div class="project">
-          <h3>Google Timeline Heatmap</h3>
-          <p>Python + Folium tool for visualizing personal travel patterns from Google Timeline data.</p>
-          <p><a href="https://github.com/alexgasconn/timeline" target="_blank">View on GitHub</a></p>
-        </div>
-        <div class="project">
-          <h3>Player Recommender System</h3>
-          <p>PCA and clustering-based tool to recommend similar football players by style.</p>
-          <p><a href="https://github.com/alexgasconn/player-recommender" target="_blank">View on GitHub</a></p>
-        </div>
-        <div class="project">
-          <h3>Expected Goals (xG) Model</h3>
-          <p>Logistic regression + SHAP to estimate goal probability in football.</p>
-          <p><a href="https://github.com/alexgasconn/xG-Regression-Model" target="_blank">View on GitHub</a></p>
-        </div>
-        <div class="project">
-          <h3>RaceTime Predictor</h3>
-          <p>Streamlit app to estimate future race times using the Riegel formula.</p>
-          <p><a href="https://alexgasconn.github.io/RaceTimePredictor/" target="_blank">Try it live</a></p>
-        </div>
-        <div class="project">
-          <h3>Real-Time Network Metrics</h3>
-          <p>Java app capturing OONF metrics and exporting data to Valkey.</p>
-          <p><a href="https://github.com/alexgasconn/OONF-Valkey-Metrics" target="_blank">View on GitHub</a></p>
-        </div>
+
+  <!-- NAVEGACIÓN SUPERIOR FIJA -->
+  <nav class="main-nav">
+    <div class="nav-logo">AGN</div>
+    <ol>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ol>
+  </nav>
+  
+  <div class="content-wrapper">
+    <!-- HERO SECTION -->
+    <header>
+      <h1 data-aos="fade-up">Hola, soy Alex Gascón.</h1>
+      <h2 class="big-heading" data-aos="fade-up" data-aos-delay="100">Convierto datos en decisiones.</h2>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Ingeniero especializado en Data Science y Sports Analytics. Construyo modelos y herramientas que extraen valor e insights de los datos, con un enfoque especial en el mundo del deporte.
+      </p>
+      <div data-aos="fade-up" data-aos-delay="300">
+        <a href="#projects" class="btn">Ver mis proyectos</a>
       </div>
-    </section>
+    </header>
 
-    <section id="more">
-      <h2>More</h2>
-      <ul>
-        <li>Open to relocation</li>
-        <li>Driving licence (5+ years)</li>
-        <li>Teamworker, problem solver, analytical thinker</li>
-        <li>International experience</li>
-        <li>Focused on Data Science & Sports Analytics</li>
-      </ul>
-    </section>
-  </main>
+    <main>
+      <!-- SOBRE MÍ -->
+      <section id="about" data-aos="fade-up">
+        <h2 class="section-heading"><span>01.</span> Sobre mí</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Soy Ingeniero de Telecomunicaciones con una profunda pasión por el análisis de datos y el Machine Learning. Mi curiosidad me ha llevado a especializarme en Sports Analytics, donde aplico modelos estadísticos y algoritmos para entender el rendimiento deportivo.</p>
+            <p>Con experiencia práctica en Python, SQL, y herramientas de Big Data como Spark, disfruto transformando datos crudos en visualizaciones interactivas y modelos predictivos que ofrecen respuestas claras a problemas complejos.</p>
+            <p>Actualmente estoy cursando un postgrado en Sports Analytics en la UPC junto al Barça Innovation Hub, buscando siempre nuevos retos donde pueda aplicar mis habilidades analíticas.</p>
+          </div>
+          <div class="about-image">
+            <div class="image-wrapper">
+              <!-- ¡IMPORTANTE! Reemplaza esto con tu foto profesional. 250x250px es un buen tamaño -->
+              <img src="https://via.placeholder.com/250" alt="Foto de Alex Gascón">
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <p>Made with passion by Alex Gascón — 2025</p>
-  </footer>
+      <!-- EXPERIENCIA -->
+      <section id="experience" data-aos="fade-up">
+        <h2 class="section-heading"><span>02.</span> Experiencia Profesional</h2>
+        <div class="experience-tabs">
+          <ul class="tabs-list" role="tablist">
+            <li><button class="tab-button active" role="tab" aria-selected="true" aria-controls="panel-indra" id="tab-indra">Indra</button></li>
+            <li><button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-axians" id="tab-axians">Axians</button></li>
+            <li><button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-framer" id="tab-framer">Framer</button></li>
+          </ul>
+          <div class="tabs-panels">
+            <div class="tab-panel active" id="panel-indra" role="tabpanel" tabindex="0" aria-labelledby="tab-indra">
+              <h3>Network Engineer <span>@ Indra</span></h3>
+              <p class="panel-date">2023 – Presente</p>
+              <ul>
+                <li>Desarrollo y testing de protocolos SDN (Software-Defined Networking) utilizando Python y contenedores Docker.</li>
+                <li>Diseño e integración de APIs REST para la automatización de redes y la orquestación de servicios.</li>
+                <li>Colaboración en proyectos internacionales bajo metodologías Agile, contribuyendo al desarrollo con Java.</li>
+              </ul>
+            </div>
+            <div class="tab-panel" id="panel-axians" role="tabpanel" tabindex="0" aria-labelledby="tab-axians">
+              <h3>Network Full-Stack Developer Intern <span>@ Axians</span></h3>
+              <p class="panel-date">2022 – 2023</p>
+              <ul>
+                <li>Automatización de funcionalidades DNS a través de servicios web (PHP y Python).</li>
+                <li>Gestión de servidores basados en Linux e implementación de soluciones web para clientes.</li>
+              </ul>
+            </div>
+            <div class="tab-panel" id="panel-framer" role="tabpanel" tabindex="0" aria-labelledby="tab-framer">
+              <h3>Support Consultant <span>@ Framer</span></h3>
+              <p class="panel-date">Periodo anterior</p>
+              <ul>
+                <li>Soporte a usuarios y resolución de incidencias técnicas y de facturación en la plataforma.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- HABILIDADES TÉCNICAS -->
+      <section id="technical-skills" data-aos="fade-up">
+        <h2 class="section-heading"><span>03.</span> Habilidades Técnicas</h2>
+        <div class="skills-grid">
+            <div>
+                <h4>Lenguajes y Librerías</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Pandas / NumPy</li>
+                    <li>Scikit-learn / XGBoost</li>
+                    <li>Matplotlib / Seaborn</li>
+                    <li>SHAP (Explainability)</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Bases de Datos y Big Data</h4>
+                <ul>
+                    <li>SQL (PostgreSQL, MySQL)</li>
+                    <li>MongoDB (NoSQL)</li>
+                    <li>Valkey (Redis-compatible)</li>
+                    <li>Apache Spark</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Herramientas y DevOps</h4>
+                <ul>
+                    <li>Git & GitHub</li>
+                    <li>Docker</li>
+                    <li>Linux CLI & Bash Scripting</li>
+                    <li>REST APIs</li>
+                    <li>Prometheus</li>
+                </ul>
+            </div>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section id="projects" data-aos="fade-up">
+        <h2 class="section-heading"><span>04.</span> Proyectos Destacados</h2>
+        <div class="projects-grid">
+          
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-content">
+              <h3 class="project-title">Strava Training Dashboard</h3>
+              <div class="project-image">
+                <!-- ¡¡CRÍTICO!! Graba un GIF de tu dashboard y ponlo aquí -->
+                <img src="https://via.placeholder.com/300x180.png?text=GIF+de+mi+Dashboard" alt="Strava Dashboard">
+              </div>
+              <p class="project-description">Dashboard interactivo construido con Streamlit para visualizar y analizar actividades de Strava, con filtros por deporte y métricas clave.</p>
+              <ul class="project-tech-list"><li>Python</li><li>Streamlit</li><li>Pandas</li><li>Strava API</li></ul>
+              <div class="project-links">
+                <a href="https://github.com/alexgasconn/Strava-dashboard" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-content">
+              <h3 class="project-title">Player Recommender System</h3>
+               <div class="project-image"><img src="https://via.placeholder.com/300x180.png?text=GIF+del+Recomendador" alt="Player Recommender"></div>
+              <p class="project-description">Herramienta que utiliza PCA y Clustering para encontrar y recomendar jugadores de fútbol con un estilo de juego similar, usando datos de FBRef.</p>
+              <ul class="project-tech-list"><li>Python</li><li>Scikit-learn</li><li>PCA</li><li>Clustering</li></ul>
+              <div class="project-links">
+                <a href="https://github.com/alexgasconn/player-recommender" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-content">
+              <h3 class="project-title">Expected Goals (xG) Model</h3>
+              <div class="project-image"><img src="https://via.placeholder.com/300x180.png?text=Gráfico+de+xG+Model" alt="xG Model"></div>
+              <p class="project-description">Modelo de regresión logística para estimar la probabilidad de gol de cada disparo en fútbol, con interpretabilidad mediante valores SHAP.</p>
+              <ul class="project-tech-list"><li>Python</li><li>Scikit-learn</li><li>XGBoost</li><li>SHAP</li></ul>
+              <div class="project-links">
+                <a href="https://github.com/alexgasconn/xG-Regression-Model" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-content">
+              <h3 class="project-title">RaceTime Predictor</h3>
+              <div class="project-image"><img src="https://via.placeholder.com/300x180.png?text=Demo+de+la+App" alt="RaceTime Predictor"></div>
+              <p class="project-description">Aplicación web en Streamlit que predice tiempos de carrera para diferentes distancias usando la fórmula de Riegel.</p>
+              <ul class="project-tech-list"><li>Python</li><li>Streamlit</li><li>Math</li></ul>
+              <div class="project-links">
+                <a href="https://github.com/alexgasconn/RaceTimePredictor" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                <a href="https://alexgasconn.github.io/RaceTimePredictor/" target="_blank" title="Ver Demo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      
+      <!-- CONTACTO -->
+      <section id="contact" data-aos="fade-up">
+        <h2 class="section-heading"><span>05.</span> ¿Hablamos?</h2>
+        <h3 class="contact-title">Ponte en Contacto</h3>
+        <p>Actualmente estoy abierto a nuevas oportunidades en Data Science y Sports Analytics. Si tienes un proyecto en mente o crees que mi perfil encaja en tu equipo, no dudes en contactarme.</p>
+        <a href="mailto:alex.gascon1999@gmail.com" class="btn">¡Mándame un email!</a>
+      </section>
+
+    </main>
+    
+    <footer>
+      <p>Diseñado y construido por Alex Gascón Navarro</p>
+      <a href="https://github.com/alexgasconn/alexgasconn.github.io" target="_blank">Ver el código de esta web en GitHub</a>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 750, // Duración de la animación
-    once: true,    // Animar solo una vez
-  });
-</script>
+  <script>
+    // Inicializar Animate on Scroll
+    AOS.init({
+      duration: 750,
+      once: true,
+      offset: 50,
+    });
+
+    // Lógica para las pestañas de experiencia
+    const tabs = document.querySelectorAll('.tab-button');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Desactivar todos
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(p => p.classList.remove('active'));
+
+        // Activar el seleccionado
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const targetPanelId = tab.getAttribute('aria-controls');
+        const targetPanel = document.getElementById(targetPanelId);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
