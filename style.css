@@ -10,13 +10,18 @@
   --green: #64ffda;
 
   --font-sans: 'Inter', sans-serif;
-  --fz-xxl: 2.5rem;
+  --font-mono: 'Fira Code', monospace;
+  --fz-xxl: clamp(40px, 8vw, 80px);
   --fz-xl: 2rem;
-  --fz-lg: 1.5rem;
+  --fz-lg: 1.25rem;
   --fz-md: 1.1rem;
   --fz-sm: 0.9rem;
+  --fz-xs: 0.8rem;
 }
 
+/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -24,153 +29,360 @@ body {
   padding: 0;
   background-color: var(--dark-navy);
   color: var(--slate);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-/* --- REESTRUCTURACIÓN DE SECCIONES --- */
-header, section {
-  padding: 80px 0;
-  max-width: 900px;
+.content-wrapper {
+  padding: 0 150px;
+  max-width: 1600px;
   margin: 0 auto;
 }
-
-h1, h2, h3 {
+section {
+  padding: 100px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6 {
   color: var(--lightest-slate);
-  margin-bottom: 20px;
+  margin: 0 0 20px;
   font-weight: 600;
+  line-height: 1.1;
 }
 
-h2 {
-    font-size: var(--fz-xl);
-    display: flex;
-    align-items: center;
+/* --- BARRA SOCIAL FIJA --- */
+.social-sidebar {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  z-index: 10;
+}
+.social-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.social-sidebar li { padding: 10px 0; }
+.social-sidebar a { color: var(--slate); transition: all 0.2s ease-in-out; }
+.social-sidebar a:hover { color: var(--green); transform: translateY(-3px); }
+.social-sidebar svg { width: 20px; height: 20px; }
+.social-sidebar::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0 auto;
+  background-color: var(--slate);
 }
 
-/* --- HEADER / HERO SECTION --- */
+/* --- NAVEGACIÓN SUPERIOR --- */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 50px;
+  height: 80px;
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 11;
+  transition: all 0.25s ease-in-out;
+}
+.nav-logo {
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-lg);
+  border: 2px solid var(--green);
+  padding: 5px 8px;
+}
+.main-nav ol {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+}
+.main-nav ol li { margin: 0 15px; }
+.main-nav ol a {
+  color: var(--lightest-slate);
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.2s ease;
+}
+.main-nav ol a:hover { color: var(--green); }
+
+/* --- HERO SECTION --- */
 header {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 150px; /* Evita que el contenido quede demasiado bajo */
 }
-
 header h1 {
   color: var(--green);
+  font-family: var(--font-mono);
   font-size: var(--fz-md);
-  margin: 0 0 10px 4px;
+  margin: 0 0 20px 4px;
 }
-
 header .big-heading {
   font-size: var(--fz-xxl);
   color: var(--lightest-slate);
   margin: 0;
+  font-weight: 700;
 }
-
 header p {
   font-size: var(--fz-lg);
   max-width: 600px;
+  margin-top: 25px;
 }
-
-/* --- BOTONES CON ESTILO Y DINAMISMO --- */
 .btn {
   color: var(--green);
   background-color: transparent;
   border: 1px solid var(--green);
   border-radius: 4px;
-  padding: 0.75rem 1.25rem;
+  padding: 1.25rem 1.75rem;
   font-size: var(--fz-sm);
+  font-family: var(--font-mono);
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  margin-right: 15px;
+  margin-top: 50px;
+  display: inline-block;
 }
-
 .btn:hover {
   background-color: rgba(100, 255, 218, 0.1);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* --- SECCIÓN DE PROYECTOS (LA MAGIA DE CSS GRID) --- */
+/* --- TÍTULOS DE SECCIÓN --- */
+.section-heading {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+  width: 100%;
+  font-size: var(--fz-xl);
+  white-space: nowrap;
+}
+.section-heading span {
+  color: var(--green);
+  font-family: var(--font-mono);
+  margin-right: 15px;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.section-heading::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: -2px;
+  width: 300px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--lightest-navy);
+}
+
+/* --- SECCIÓN SOBRE MÍ --- */
+.about-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 50px;
+}
+.about-image { position: relative; }
+.image-wrapper {
+  display: block;
+  position: relative;
+  width: 250px;
+  border-radius: 4px;
+  background: var(--green);
+}
+.image-wrapper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  top: 15px;
+  left: 15px;
+  z-index: -1;
+  transition: all 0.2s ease;
+}
+.image-wrapper:hover::after {
+  top: 10px;
+  left: 10px;
+}
+.image-wrapper img {
+  width: 100%;
+  position: relative;
+  border-radius: 4px;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1);
+  transition: all 0.2s ease;
+}
+.image-wrapper:hover img {
+  mix-blend-mode: normal;
+  filter: none;
+}
+
+/* --- SECCIÓN EXPERIENCIA (TABS) --- */
+.experience-tabs { display: flex; gap: 30px; }
+.tabs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+}
+.tab-button {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--lightest-navy);
+  color: var(--slate);
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: left;
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  transition: all 0.2s ease;
+}
+.tab-button:hover { background-color: var(--lightest-navy); color: var(--green); }
+.tab-button.active { color: var(--green); border-left-color: var(--green); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-panel h3 { font-size: var(--fz-lg); }
+.tab-panel h3 span { color: var(--green); }
+.panel-date {
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  margin-bottom: 25px;
+}
+.tab-panel ul { list-style: none; padding: 0; }
+.tab-panel li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+.tab-panel li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+/* --- HABILIDADES TÉCNICAS --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.skills-grid ul { list-style: none; padding: 0; margin: 0; }
+.skills-grid li { position: relative; padding-left: 20px; margin-bottom: 10px; }
+.skills-grid li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: 14px;
+}
+
+/* --- PROYECTOS --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
-
 .project-card {
   background-color: var(--light-navy);
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
   transition: all 0.25s ease-in-out;
   display: flex;
-  flex-direction: column;
 }
-
-.project-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
-}
-
-.project-image img {
-  width: 100%;
-  height: 180px; /* Altura fija para la imagen */
-  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  opacity: 0.8;
-  transition: opacity 0.25s ease;
-}
-
-.project-card:hover .project-image img {
-    opacity: 1;
-}
-
+.project-card:hover { transform: translateY(-7px); }
 .project-content {
-  padding: 20px;
-  flex-grow: 1;
+  padding: 25px;
   display: flex;
   flex-direction: column;
 }
-
-.project-title {
-  font-size: var(--fz-lg);
-  color: var(--lightest-slate);
-}
-
-.project-description {
-  font-size: var(--fz-sm);
-  flex-grow: 1;
-}
-
-.project-tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
+.project-title { font-size: var(--fz-lg); color: var(--lightest-slate); margin-bottom: 10px; }
+.project-image {
   margin: 15px 0;
-  font-size: 0.8rem;
-  color: var(--light-slate);
+  border-radius: 4px;
+  overflow: hidden;
 }
-
-.project-tech-list li {
-  margin-right: 15px;
-  font-family: 'Fira Code', monospace; /* Una fuente mono para las techs queda genial */
+.project-image img { width: 100%; height: 100%; object-fit: cover; }
+.project-description { font-size: var(--fz-sm); flex-grow: 1; }
+.project-tech-list {
+  display: flex; flex-wrap: wrap; list-style: none; padding: 0;
+  margin: 20px 0 10px; font-size: var(--fz-xs); color: var(--light-slate);
+  font-family: var(--font-mono);
 }
-
+.project-tech-list li { margin-right: 15px; margin-bottom: 5px; }
+.project-links { margin-top: auto; }
 .project-links a {
   color: var(--light-slate);
   margin-right: 15px;
   transition: color 0.2s ease;
 }
+.project-links a:hover { color: var(--green); }
+.project-links svg { width: 22px; height: 22px; }
 
-.project-links a:hover {
+/* --- CONTACTO Y FOOTER --- */
+#contact {
+  text-align: center;
+  max-width: 600px;
+}
+#contact .contact-title {
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-md);
+  margin-bottom: 15px;
+}
+#contact .section-heading {
+  justify-content: center;
+}
+#contact .section-heading::after {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+}
+footer a {
+  color: var(--slate);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+footer a:hover {
   color: var(--green);
 }
 
-.project-links svg {
-  width: 22px;
-  height: 22px;
+/* --- MEDIA QUERIES PARA RESPONSIVE --- */
+@media (max-width: 1080px) {
+  .content-wrapper { padding: 0 100px; }
+}
+@media (max-width: 768px) {
+  .content-wrapper { padding: 0 50px; }
+  .social-sidebar { display: none; }
+  .about-content { grid-template-columns: 1fr; }
+  .about-image { margin: 50px auto 0; }
+  .experience-tabs { flex-direction: column; }
+  .tabs-list { display: flex; overflow-x: auto; }
+  .tabs-list li { flex-shrink: 0; }
+  .main-nav ol { display: none; } /* Opcional: reemplazar por un menú hamburguesa */
+}
+@media (max-width: 480px) {
+  .content-wrapper { padding: 0 25px; }
 }
