@@ -1,4 +1,4 @@
-/* --- VARIABLES Y ESTILOS GLOBALES --- */
+/* --- VARIABLES AND GLOBAL STYLES --- */
 :root {
   --dark-navy: #0a192f;
   --light-navy: #112240;
@@ -19,7 +19,7 @@
   --fz-xs: 0.8rem;
 }
 
-/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
+/* --- BASIC RESET AND GLOBAL STYLES --- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
-/* --- BARRA SOCIAL FIJA --- */
+/* --- FIXED SOCIAL BAR --- */
 .social-sidebar {
   width: 40px;
   position: fixed;
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--slate);
 }
 
-/* --- NAVEGACIÓN SUPERIOR --- */
+/* --- TOP NAVIGATION --- */
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -116,6 +116,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.2s ease;
 }
 .main-nav ol a:hover { color: var(--green); }
+.main-nav ol a::before {
+    content: "0" counter(item) ".";
+    counter-increment: item;
+    margin-right: 5px;
+    color: var(--green);
+    font-size: var(--fz-xs);
+}
+.main-nav ol { counter-reset: item 0; }
+
 
 /* --- HERO SECTION --- */
 header {
@@ -123,7 +132,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 150px; /* Evita que el contenido quede demasiado bajo */
+  padding-bottom: 150px; /* Prevents content from being too low */
 }
 header h1 {
   color: var(--green);
@@ -161,7 +170,7 @@ header p {
   transform: translateY(-3px);
 }
 
-/* --- TÍTULOS DE SECCIÓN --- */
+/* --- SECTION HEADINGS --- */
 .section-heading {
   display: flex;
   align-items: center;
@@ -189,7 +198,7 @@ header p {
   background-color: var(--lightest-navy);
 }
 
-/* --- SECCIÓN SOBRE MÍ --- */
+/* --- ABOUT ME SECTION --- */
 .about-content {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -233,7 +242,7 @@ header p {
   filter: none;
 }
 
-/* --- SECCIÓN EXPERIENCIA (TABS) --- */
+/* --- EXPERIENCE SECTION (TABS) --- */
 .experience-tabs { display: flex; gap: 30px; }
 .tabs-list {
   list-style: none;
@@ -278,14 +287,25 @@ header p {
   color: var(--green);
 }
 
-/* --- HABILIDADES TÉCNICAS --- */
+/* --- TECHNICAL SKILLS --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
 }
+.skills-grid h4 {
+    color: var(--lightest-slate);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
 .skills-grid ul { list-style: none; padding: 0; margin: 0; }
-.skills-grid li { position: relative; padding-left: 20px; margin-bottom: 10px; }
+.skills-grid li { 
+    position: relative; 
+    padding-left: 20px; 
+    margin-bottom: 10px; 
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+}
 .skills-grid li::before {
     content: "▹";
     position: absolute;
@@ -294,10 +314,10 @@ header p {
     font-size: 14px;
 }
 
-/* --- PROYECTOS --- */
+/* --- PROJECTS --- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
 }
 .project-card {
@@ -332,11 +352,12 @@ header p {
   color: var(--light-slate);
   margin-right: 15px;
   transition: color 0.2s ease;
+  display: inline-block;
 }
 .project-links a:hover { color: var(--green); }
 .project-links svg { width: 22px; height: 22px; }
 
-/* --- CONTACTO Y FOOTER --- */
+/* --- CONTACT & FOOTER --- */
 #contact {
   text-align: center;
   max-width: 600px;
@@ -369,7 +390,7 @@ footer a:hover {
   color: var(--green);
 }
 
-/* --- MEDIA QUERIES PARA RESPONSIVE --- */
+/* --- MEDIA QUERIES FOR RESPONSIVE --- */
 @media (max-width: 1080px) {
   .content-wrapper { padding: 0 100px; }
 }
@@ -379,9 +400,11 @@ footer a:hover {
   .about-content { grid-template-columns: 1fr; }
   .about-image { margin: 50px auto 0; }
   .experience-tabs { flex-direction: column; }
-  .tabs-list { display: flex; overflow-x: auto; }
+  .tabs-list { display: flex; overflow-x: auto; border-left: none; }
   .tabs-list li { flex-shrink: 0; }
-  .main-nav ol { display: none; } /* Opcional: reemplazar por un menú hamburguesa */
+  .tab-button { border-left: none; border-bottom: 2px solid var(--lightest-navy); }
+  .tab-button.active { border-bottom-color: var(--green); }
+  .main-nav ol { display: none; } /* Consider replacing with a hamburger menu */
 }
 @media (max-width: 480px) {
   .content-wrapper { padding: 0 25px; }
