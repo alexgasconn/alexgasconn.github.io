@@ -105,7 +105,7 @@
                     eyebrow: 'Análisis de rutas · Planificación',
                     description: 'Convierte una ruta GPX en un perfil de elevación, un análisis del terreno y una estimación de duración. Compara cinco modelos transparentes y una estimación agregada; añade previsión meteorológica y avisos de luz diurna. Los cálculos de la ruta se realizan en el navegador.',
                     actions: ['Abrir app', 'GitHub'],
-                    alt: 'Mapa de ruta y panel de planificación de TrekkingTime Pro'
+                    alt: 'Mapa de ruta y panel de planificación de Trekking Time'
                 },
                 {
                     eyebrow: 'Estrategia de carrera · Trail running',
@@ -286,7 +286,7 @@
                     eyebrow: 'Anàlisi de rutes · Planificació',
                     description: 'Converteix una ruta GPX en un perfil d\'elevació, una anàlisi del terreny i una estimació de durada. Compara cinc models transparents i una estimació agregada; afegeix previsió meteorològica i avisos de llum diürna. Els càlculs de la ruta es fan al navegador.',
                     actions: ['Obre l\'app', 'GitHub'],
-                    alt: 'Mapa de ruta i panell de planificació de TrekkingTime Pro'
+                    alt: 'Mapa de ruta i panell de planificació de Trekking Time'
                 },
                 {
                     eyebrow: 'Estratègia de cursa · Trail running',
