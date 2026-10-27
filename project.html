@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project case study by Alex Gascón Navarro.">
+  <meta name="theme-color" content="#f3f5f0">
+  <title>Project | Alex Gascón Navarro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project-detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="project-detail-body">
+  <nav class="main-nav project-nav" aria-label="Project navigation">
+    <a class="nav-logo" href="index.html" aria-label="Alex Gascón Navarro home">AGN</a>
+    <a class="project-back" href="index.html#projects"><span aria-hidden="true">←</span><span id="back-label">Back to projects</span></a>
+    <div class="language-switch" role="group" aria-label="Select language">
+      <button type="button" class="language-button active" data-language="en" aria-pressed="true">EN</button>
+      <button type="button" class="language-button" data-language="es" aria-pressed="false">ES</button>
+      <button type="button" class="language-button" data-language="ca" aria-pressed="false">CA</button>
+    </div>
+  </nav>
+
+  <main class="project-detail-shell" id="project-detail" aria-live="polite">
+    <header class="project-detail-hero">
+      <div class="project-detail-intro">
+        <p class="project-detail-kicker" id="detail-category"></p>
+        <h1 id="detail-title"></h1>
+        <p class="project-detail-lead" id="detail-summary"></p>
+        <div class="project-detail-actions">
+          <a class="btn" id="detail-live" target="_blank" rel="noopener noreferrer"></a>
+          <a class="text-link" id="detail-repo" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </div>
+      <figure class="project-detail-visual" id="detail-visual">
+        <img id="detail-image" alt="">
+      </figure>
+    </header>
+
+    <div class="project-detail-grid">
+      <section class="detail-section detail-context">
+        <p class="detail-index" id="label-challenge"></p>
+        <h2 id="heading-challenge"></h2>
+        <p id="detail-challenge"></p>
+      </section>
+      <section class="detail-section detail-features">
+        <p class="detail-index" id="label-features"></p>
+        <h2 id="heading-features"></h2>
+        <ul id="detail-features"></ul>
+      </section>
+      <section class="detail-section detail-engineering">
+        <p class="detail-index" id="label-engineering"></p>
+        <h2 id="heading-engineering"></h2>
+        <p id="detail-engineering"></p>
+      </section>
+      <section class="detail-section detail-architecture">
+        <p class="detail-index" id="label-architecture"></p>
+        <h2 id="heading-architecture"></h2>
+        <p id="detail-architecture"></p>
+      </section>
+      <section class="detail-section detail-data">
+        <p class="detail-index" id="label-data"></p>
+        <h2 id="heading-data"></h2>
+        <p id="detail-data"></p>
+      </section>
+      <section class="detail-section detail-stack">
+        <p class="detail-index" id="label-stack"></p>
+        <h2 id="heading-stack"></h2>
+        <ul class="detail-stack-list" id="detail-stack"></ul>
+      </section>
+    </div>
+
+    <footer class="project-detail-footer">
+      <a href="index.html#projects"><span aria-hidden="true">←</span> <span id="footer-back">Back to all projects</span></a>
+      <p>Alex Gascón Navarro</p>
+    </footer>
+  </main>
+
+  <script src="project-details.js"></script>
+  <script src="project-pages.js"></script>
+</body>
+</html>

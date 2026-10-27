@@ -92,6 +92,8 @@
                 'Datos y rendimiento deportivo',
                 'Datos personales y visualización'
             ],
+            projectDetailCta: 'Leer ficha del proyecto',
+            projectDetailAria: 'Abrir los detalles del proyecto',
             cards: [
                 {
                     eyebrow: 'Navegación sin conexión · PWA',
@@ -271,6 +273,8 @@
                 'Dades i rendiment esportiu',
                 'Dades personals i visualització'
             ],
+            projectDetailCta: 'Consulta la fitxa del projecte',
+            projectDetailAria: 'Obre els detalls del projecte',
             cards: [
                 {
                     eyebrow: 'Navegació sense connexió · PWA',
@@ -470,6 +474,9 @@
                 setContent(card.querySelector('.project-description'), cardCopy.description);
                 setList('.project-links a', cardCopy.actions, card, true);
                 setAttribute(card.querySelector('.project-image img'), 'alt', cardCopy.alt);
+                setContent(card.querySelector('.project-detail-cta'), copy.projectDetailCta);
+                setAttribute(card.querySelector('.project-detail-cta'), 'href', window.projectPageHref(card.dataset.projectId, language));
+                setAttribute(card, 'aria-label', `${copy.projectDetailAria}: ${card.querySelector('.project-title').textContent}`);
             });
 
             setLeadingText(document.querySelector('#contact .section-heading'), copy.contactTitle);

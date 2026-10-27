@@ -714,6 +714,36 @@ header p {
   height: 22px;
 }
 
+.project-card[tabindex="0"] {
+  cursor: pointer;
+}
+
+.project-card[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.project-detail-cta {
+  display: inline-block;
+  margin: 15px 23px 20px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(25, 43, 36, 0.1);
+  color: var(--teal);
+  font-size: var(--fz-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-detail-cta::after {
+  margin-left: 6px;
+  content: '↗';
+  font-family: var(--font-mono);
+}
+
+.project-detail-cta:hover {
+  color: var(--green);
+}
+
 /* --- CONTACT & FOOTER --- */
 #contact {
   text-align: center;

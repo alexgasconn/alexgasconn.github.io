@@ -1,0 +1,274 @@
+/* --- PROJECT CASE STUDY --- */
+.project-detail-body {
+  min-height: 100vh;
+}
+
+.project-nav {
+  gap: 20px;
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-right: auto;
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  text-decoration: none;
+}
+
+.project-back:hover,
+.project-detail-footer a:hover {
+  color: var(--green);
+}
+
+.project-detail-shell {
+  width: min(100% - 64px, 1180px);
+  margin: 0 auto;
+  padding: 126px 0 38px;
+}
+
+.project-detail-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 54px;
+  padding: 36px 0 62px;
+  border-bottom: 1px solid rgba(25, 43, 36, 0.14);
+}
+
+.project-detail-intro {
+  min-width: 0;
+}
+
+.project-detail-kicker,
+.detail-index {
+  margin: 0 0 12px;
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  text-transform: uppercase;
+}
+
+.project-detail-hero h1 {
+  margin: 0 0 18px;
+  color: var(--lightest-slate);
+  font-family: var(--font-display);
+  font-size: 58px;
+  line-height: 1.02;
+  overflow-wrap: anywhere;
+}
+
+.project-detail-lead {
+  max-width: 590px;
+  margin: 0;
+  color: var(--light-slate);
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.project-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  margin-top: 20px;
+}
+
+.project-detail-actions .btn {
+  margin: 0;
+}
+
+.project-detail-actions .text-link {
+  margin: 0;
+}
+
+.project-detail-visual {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 300px;
+  max-height: 540px;
+  margin: 0;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(25, 43, 36, 0.1);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.project-detail-visual img {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 48px;
+}
+
+.detail-section {
+  min-width: 0;
+  padding: 38px 0 34px;
+  border-bottom: 1px solid rgba(25, 43, 36, 0.12);
+}
+
+.detail-section h2 {
+  margin: 0 0 14px;
+  color: var(--lightest-slate);
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.16;
+}
+
+.detail-section > p:not(.detail-index) {
+  margin: 0;
+  color: var(--light-slate);
+  font-size: var(--fz-md);
+  line-height: 1.75;
+}
+
+.detail-features ul,
+.detail-stack-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail-features li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--light-slate);
+  line-height: 1.65;
+}
+
+.detail-features li::before {
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  content: '↗';
+  font-family: var(--font-mono);
+}
+
+.detail-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail-stack-list li {
+  padding: 6px 9px;
+  border: 1px solid rgba(54, 120, 109, 0.2);
+  border-radius: 2px;
+  background: #fff;
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+}
+
+.project-detail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+}
+
+.project-detail-footer a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.project-detail-footer p {
+  margin: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 850px) {
+  .project-detail-shell {
+    width: min(100% - 48px, 700px);
+  }
+
+  .project-detail-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .project-detail-visual {
+    min-height: 220px;
+    max-height: 480px;
+  }
+
+  .project-detail-visual img {
+    max-height: 440px;
+  }
+}
+
+@media (max-width: 540px) {
+  .project-nav {
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .project-nav .project-back {
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .project-nav .language-button {
+    min-width: 24px;
+    padding: 6px 3px;
+    font-size: 9px;
+  }
+
+  .project-detail-shell {
+    width: min(100% - 36px, 480px);
+    padding-top: 100px;
+  }
+
+  .project-detail-hero {
+    gap: 24px;
+    padding: 24px 0 36px;
+  }
+
+  .project-detail-hero h1 {
+    font-size: 42px;
+  }
+
+  .project-detail-lead {
+    font-size: 17px;
+  }
+
+  .project-detail-visual {
+    min-height: 180px;
+    padding: 10px;
+  }
+
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-section {
+    padding: 30px 0;
+  }
+
+  .detail-section h2 {
+    font-size: 24px;
+  }
+
+  .project-detail-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
