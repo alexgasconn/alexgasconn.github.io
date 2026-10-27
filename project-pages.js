@@ -30,6 +30,11 @@
         back: 'Back to selected work',
         live: 'Open live project',
         source: 'View source on GitHub',
+        previousImage: 'Previous image',
+        nextImage: 'Next image',
+        pause: 'Pause slideshow',
+        play: 'Play slideshow',
+        gallery: 'Project image gallery',
         challenge: ['01 / CONTEXT', 'The challenge'],
         features: ['02 / PRODUCT', 'What it does'],
         engineering: ['03 / ENGINEERING', 'How it works'],
@@ -44,6 +49,11 @@
         back: 'Volver a proyectos',
         live: 'Abrir proyecto',
         source: 'Ver código en GitHub',
+        previousImage: 'Imagen anterior',
+        nextImage: 'Imagen siguiente',
+        pause: 'Pausar carrusel',
+        play: 'Reanudar carrusel',
+        gallery: 'Galería de imágenes del proyecto',
         challenge: ['01 / CONTEXTO', 'El reto'],
         features: ['02 / PRODUCTO', 'Qué hace'],
         engineering: ['03 / INGENIERÍA', 'Cómo funciona'],
@@ -58,6 +68,11 @@
         back: 'Torna als projectes',
         live: 'Obre el projecte',
         source: 'Veure el codi a GitHub',
+        previousImage: 'Imatge anterior',
+        nextImage: 'Imatge següent',
+        pause: 'Pausa la presentació',
+        play: 'Reprèn la presentació',
+        gallery: 'Galeria d’imatges del projecte',
         challenge: ['01 / CONTEXT', 'El repte'],
         features: ['02 / PRODUCTE', 'Què fa'],
         engineering: ['03 / ENGINYERIA', 'Com funciona'],
@@ -76,6 +91,110 @@
     const language = ['en', 'es', 'ca'].includes(query.get('lang')) ? query.get('lang') : 'en';
     const title = document.querySelector('#detail-title');
     const description = document.querySelector('#detail-summary');
+    const imageFigure = document.querySelector('#detail-visual');
+    const image = document.querySelector('#detail-image');
+    const imageCaption = document.querySelector('#detail-image-caption');
+    const imageCounter = document.querySelector('#carousel-counter');
+    const previousButton = document.querySelector('#carousel-previous');
+    const nextButton = document.querySelector('#carousel-next');
+    const carouselToggle = document.querySelector('#carousel-toggle');
+    let images = [];
+    let imageIndex = 0;
+    let activeLanguage = language;
+    let autoplayTimer;
+    let swipeStart = null;
+    let userPaused = false;
+    let pointerInside = false;
+    let focusInside = false;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function stopAutoplay() {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = undefined;
+    }
+
+    function renderImage() {
+      const current = images[imageIndex];
+      if (!current) return;
+      const frame = typeof current === 'string' ? { src: current } : current;
+      const caption = typeof frame.caption === 'string'
+        ? frame.caption
+        : frame.caption?.[activeLanguage] ?? frame.caption?.en ?? '';
+      image.src = frame.src;
+      image.alt = frame.alt?.[activeLanguage] ?? frame.alt?.en ?? `${project.title} — ${caption || project[activeLanguage].category}`;
+      imageCaption.textContent = caption;
+      imageCaption.hidden = !caption;
+      imageCounter.textContent = `${String(imageIndex + 1).padStart(2, '0')} / ${String(images.length).padStart(2, '0')}`;
+      previousButton.hidden = images.length < 2;
+      nextButton.hidden = images.length < 2;
+      imageCounter.hidden = images.length < 2;
+      carouselToggle.hidden = images.length < 2;
+      carouselToggle.setAttribute('aria-pressed', String(userPaused));
+      carouselToggle.setAttribute('aria-label', userPaused ? labels[activeLanguage].play : labels[activeLanguage].pause);
+      carouselToggle.querySelector('span').textContent = userPaused ? '▶' : 'Ⅱ';
+      imageFigure.classList.toggle('has-carousel', images.length > 1);
+    }
+
+    function startAutoplay(force = false) {
+      stopAutoplay();
+      if (images.length < 2 || userPaused || reduceMotion || document.hidden || (!force && (pointerInside || focusInside))) return;
+      autoplayTimer = window.setInterval(() => {
+        imageIndex = (imageIndex + 1) % images.length;
+        renderImage();
+      }, 5000);
+    }
+
+    function moveImage(direction) {
+      if (images.length < 2) return;
+      imageIndex = (imageIndex + direction + images.length) % images.length;
+      renderImage();
+      startAutoplay();
+    }
+
+    previousButton.addEventListener('click', () => moveImage(-1));
+    nextButton.addEventListener('click', () => moveImage(1));
+    carouselToggle.addEventListener('click', () => {
+      userPaused = !userPaused;
+      if (userPaused) stopAutoplay();
+      else startAutoplay(true);
+      renderImage();
+    });
+    imageFigure.addEventListener('pointerenter', () => {
+      pointerInside = true;
+      stopAutoplay();
+    });
+    imageFigure.addEventListener('pointerleave', () => {
+      pointerInside = false;
+      startAutoplay();
+    });
+    imageFigure.addEventListener('focusin', () => {
+      focusInside = true;
+      stopAutoplay();
+    });
+    imageFigure.addEventListener('focusout', event => {
+      if (!imageFigure.contains(event.relatedTarget)) {
+        focusInside = false;
+        startAutoplay();
+      }
+    });
+    imageFigure.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') moveImage(-1);
+      if (event.key === 'ArrowRight') moveImage(1);
+    });
+    imageFigure.addEventListener('pointerdown', event => {
+      if (!event.target.closest('button')) swipeStart = event.clientX;
+    });
+    imageFigure.addEventListener('pointerup', event => {
+      if (swipeStart === null) return;
+      const delta = event.clientX - swipeStart;
+      swipeStart = null;
+      if (Math.abs(delta) > 45) moveImage(delta < 0 ? 1 : -1);
+    });
+    imageFigure.addEventListener('pointercancel', () => { swipeStart = null; });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
 
     function setList(element, values) {
       element.replaceChildren(...values.map(value => {
@@ -88,8 +207,13 @@
     function renderProject(nextLanguage) {
       const copy = project?.[nextLanguage] ?? project?.en;
       const ui = labels[nextLanguage] ?? labels.en;
+      activeLanguage = nextLanguage;
       document.documentElement.lang = nextLanguage;
       document.querySelector('.project-nav').setAttribute('aria-label', ui.projectNav);
+      imageFigure.setAttribute('aria-label', ui.gallery);
+      previousButton.setAttribute('aria-label', ui.previousImage);
+      nextButton.setAttribute('aria-label', ui.nextImage);
+      carouselToggle.setAttribute('aria-label', userPaused ? ui.play : ui.pause);
 
       document.querySelectorAll('.project-detail-back').forEach(link => {
         link.href = 'index.html#projects';
@@ -132,15 +256,31 @@
       setList(document.querySelector('#detail-features'), copy.features);
       setList(document.querySelector('#detail-stack'), project.stack);
 
-      const imageFigure = document.querySelector('#detail-visual');
-      const image = document.querySelector('#detail-image');
-      if (project.image) {
-        image.src = project.image;
-        image.alt = `${project.title} — ${copy.category}`;
+      images = Array.isArray(project.images) ? project.images : (project.image ? [project.image] : []);
+      imageIndex = Math.min(imageIndex, Math.max(images.length - 1, 0));
+      if (images.length) {
         imageFigure.hidden = false;
-        image.onerror = () => { imageFigure.hidden = true; };
+        renderImage();
+        startAutoplay();
+        image.onerror = () => {
+          images.splice(imageIndex, 1);
+          if (!images.length) {
+            stopAutoplay();
+            imageFigure.hidden = true;
+            return;
+          }
+          imageIndex %= images.length;
+          renderImage();
+          startAutoplay();
+        };
       } else {
+        stopAutoplay();
         imageFigure.hidden = true;
+        imageCaption.hidden = true;
+        imageCounter.hidden = true;
+        previousButton.hidden = true;
+        nextButton.hidden = true;
+        carouselToggle.hidden = true;
       }
 
       const liveLink = document.querySelector('#detail-live');

@@ -1,6 +1,7 @@
+// Add more captures to each images array; nested paths such as files/Strav/Strava1.png work on static hosting.
 window.projectDetails = {
   trailnav: {
-    title: 'TrailNav', image: 'TrailNav.png', live: 'https://trail-nav.vercel.app/', repo: 'https://github.com/alexgasconn/TrailNav', stack: ['TypeScript', 'React', 'MapLibre', 'IndexedDB', 'PWA'],
+    title: 'TrailNav', images: [{ src: 'TrailNav.png', caption: { en: 'Trail map and elevation profile', es: 'Mapa de ruta y perfil de elevación', ca: 'Mapa de ruta i perfil d’elevació' } }], live: 'https://trail-nav.vercel.app/', repo: 'https://github.com/alexgasconn/TrailNav', stack: ['TypeScript', 'React', 'MapLibre', 'IndexedDB', 'PWA'],
     en: {
       category: 'Outdoor navigation · Offline-first PWA',
       summary: 'A route companion for hiking, trail running and mountain biking, designed to keep core route planning and navigation available when coverage disappears.',
@@ -30,7 +31,7 @@ window.projectDetails = {
     }
   },
   'trekkingtime-pro': {
-    title: 'TrekkingTime Pro', image: 'files/TrekkingPro.webp', live: 'https://trekking-pro.vercel.app/', repo: 'https://github.com/alexgasconn/TrekkingPro', stack: ['TypeScript', 'React', 'Leaflet', 'Recharts', 'Open-Meteo'],
+    title: 'TrekkingTime Pro', images: [{ src: 'files/TrekkingPro.webp', caption: { en: 'Route analysis and planning dashboard', es: 'Panel de análisis y planificación de rutas', ca: 'Panell d’anàlisi i planificació de rutes' } }], live: 'https://trekking-pro.vercel.app/', repo: 'https://github.com/alexgasconn/TrekkingPro', stack: ['TypeScript', 'React', 'Leaflet', 'Recharts', 'Open-Meteo'],
     en: {
       category: 'Route analytics · Hiking and trekking',
       summary: 'Turns a GPX file into a route-planning workspace with terrain analysis, elevation visuals and a range of explainable hiking-time estimates.',
@@ -60,7 +61,7 @@ window.projectDetails = {
     }
   },
   'race-planner-pro': {
-    title: 'Race Planner Pro', image: 'files/RacePlanner.webp', live: 'https://race-planner-pro.vercel.app/', repo: 'https://github.com/alexgasconn/RacePlanner', stack: ['TypeScript', 'Next.js', 'GPX', 'Chart.js', 'Leaflet'],
+    title: 'Race Planner Pro', images: [{ src: 'files/RacePlanner.webp', caption: { en: 'Race elevation and pacing plan', es: 'Desnivel y plan de ritmos de carrera', ca: 'Desnivell i pla de ritmes de cursa' } }], live: 'https://race-planner-pro.vercel.app/', repo: 'https://github.com/alexgasconn/RacePlanner', stack: ['TypeScript', 'Next.js', 'GPX', 'Chart.js', 'Leaflet'],
     en: {
       category: 'Race planning · Trail running',
       summary: 'A terrain-aware pacing planner that turns a route and target finish time into a practical, sector-by-sector race plan.',
@@ -90,7 +91,7 @@ window.projectDetails = {
     }
   },
   '100-cims': {
-    title: '100 Cims Map', image: 'files/100cims.png', live: 'https://mapa100cims.vercel.app/', repo: 'https://github.com/alexgasconn/100-Cims-Mapa', stack: ['TypeScript', 'Web Workers', 'deck.gl', 'MapLibre', 'GPX / TCX / FIT'],
+    title: '100 Cims Map', images: [{ src: 'files/100cims.png', caption: { en: '100 Cims challenge map', es: 'Mapa del reto 100 Cims', ca: 'Mapa del repte dels 100 Cims' } }], live: 'https://mapa100cims.vercel.app/', repo: 'https://github.com/alexgasconn/100-Cims-Mapa', stack: ['TypeScript', 'Web Workers', 'deck.gl', 'MapLibre', 'GPX / TCX / FIT'],
     en: {
       category: 'Catalonia · Activity mapping · Challenge tracker',
       summary: 'An activity map that checks which peaks in the FEEC 100 Cims challenge are crossed by your recorded routes.',
@@ -120,7 +121,7 @@ window.projectDetails = {
     }
   },
   oasis: {
-    title: 'Oasis', image: 'Oasis.png', live: 'https://www.oasis-search.vercel.app/', repo: 'https://github.com/alexgasconn/Oasis', stack: ['React', 'TypeScript', 'Leaflet', 'OpenStreetMap', 'PWA'],
+    title: 'Oasis', images: [{ src: 'Oasis.png', caption: { en: 'Nearby water fountain map and compass', es: 'Mapa y brújula de fuentes cercanas', ca: 'Mapa i brúixola de fonts properes' } }], live: 'https://www.oasis-search.vercel.app/', repo: 'https://github.com/alexgasconn/Oasis', stack: ['React', 'TypeScript', 'Leaflet', 'OpenStreetMap', 'PWA'],
     en: {
       category: 'Mobile geospatial utility · Hydration',
       summary: 'A location-aware water finder for people moving outdoors: locate nearby fountains, springs and drinking-water taps without searching a general-purpose map.',
@@ -150,7 +151,7 @@ window.projectDetails = {
     }
   },
   'gpx-master-pro': {
-    title: 'GPX Master Pro', image: null, live: 'https://gpx-master.vercel.app/', repo: 'https://github.com/alexgasconn/GPX-Master', stack: ['React', 'TypeScript', 'Leaflet', 'GPX', 'Valhalla'],
+    title: 'GPX Master Pro', images: [], live: 'https://gpx-master.vercel.app/', repo: 'https://github.com/alexgasconn/GPX-Master', stack: ['React', 'TypeScript', 'Leaflet', 'GPX', 'Valhalla'],
     en: {
       category: 'GPS track editor · Client-side data tools',
       summary: 'A detailed workbench for inspecting, editing, repairing and exporting GPS tracks, with point-level controls and recovery tools.',
@@ -180,7 +181,7 @@ window.projectDetails = {
     }
   },
   'gpx-track-analyzer': {
-    title: 'GPX Track Analyzer', image: 'files/GPX.webp', live: 'https://gpx-analyzer.streamlit.app/', repo: 'https://github.com/alexgasconn/GPX-Analyzer', stack: ['Python', 'Streamlit', 'Pandas', 'NumPy', 'GPX'],
+    title: 'GPX Track Analyzer', images: [{ src: 'files/GPX.webp', caption: { en: 'GPS route and terrain analysis', es: 'Análisis de ruta GPS y terreno', ca: 'Anàlisi de ruta GPS i terreny' } }], live: 'https://gpx-analyzer.streamlit.app/', repo: 'https://github.com/alexgasconn/GPX-Analyzer', stack: ['Python', 'Streamlit', 'Pandas', 'NumPy', 'GPX'],
     en: {
       category: 'Route analysis · Elevation and GPS quality',
       summary: 'An analytical view of GPX tracks that surfaces elevation structure, route statistics and potential GPS noise.',
@@ -210,7 +211,7 @@ window.projectDetails = {
     }
   },
   stravastats: {
-    title: 'StravaStats', image: 'files/Strava.png', live: 'https://stravastats.vercel.app/', repo: 'https://github.com/alexgasconn/StravaStats', stack: ['JavaScript ES modules', 'Strava API v3', 'Vercel Functions', 'Chart.js', 'D3.js', 'Leaflet', 'PWA'],
+    title: 'StravaStats', images: [{ src: 'files/Strava.png', caption: { en: 'Race pace prediction chart', es: 'Gráfico de predicción de ritmo', ca: 'Gràfic de predicció de ritme' } }], live: 'https://stravastats.vercel.app/', repo: 'https://github.com/alexgasconn/StravaStats', stack: ['JavaScript ES modules', 'Strava API v3', 'Vercel Functions', 'Chart.js', 'D3.js', 'Leaflet', 'PWA'],
     en: {
       category: 'Endurance analytics · Training platform',
       summary: 'A free, feature-rich Strava analytics platform designed to put premium-style training insights within reach of every athlete.',
@@ -240,7 +241,7 @@ window.projectDetails = {
     }
   },
   'player-recommender': {
-    title: 'Player Recommender', image: 'files/Players.png', live: 'https://player-recommender.streamlit.app/', repo: 'https://github.com/alexgasconn/player-recommender', stack: ['Python', 'Scikit-learn', 'PCA', 'K-means', 'Streamlit'],
+    title: 'Player Recommender', images: [{ src: 'files/Players.png', caption: { en: 'Player comparison dashboard', es: 'Panel de comparación de jugadores', ca: 'Panell de comparació de jugadors' } }], live: 'https://player-recommender.streamlit.app/', repo: 'https://github.com/alexgasconn/player-recommender', stack: ['Python', 'Scikit-learn', 'PCA', 'K-means', 'Streamlit'],
     en: {
       category: 'Football analytics · Scouting',
       summary: 'A player-comparison tool that uses performance statistics to surface footballers with similar profiles.',
@@ -270,7 +271,7 @@ window.projectDetails = {
     }
   },
   'transfermarkt-pipeline': {
-    title: 'Transfermarkt Pipeline', image: 'files/Transfermarkt.webp', live: null, repo: 'https://github.com/alexgasconn/transfermarkt-scraper-api', stack: ['Python', 'FastAPI', 'Streamlit', 'Data pipelines'],
+    title: 'Transfermarkt Pipeline', images: [{ src: 'files/Transfermarkt.webp', caption: { en: 'Player data application', es: 'Aplicación de datos de jugadores', ca: 'Aplicació de dades de jugadors' } }], live: null, repo: 'https://github.com/alexgasconn/transfermarkt-scraper-api', stack: ['Python', 'FastAPI', 'Streamlit', 'Data pipelines'],
     en: {
       category: 'Football data · API and analytics pipeline',
       summary: 'An end-to-end workflow that collects football player data, exposes it through an API and makes it available for interactive exploration.',
@@ -300,7 +301,7 @@ window.projectDetails = {
     }
   },
   'spotify-stats': {
-    title: 'Spotify Stats', image: 'files/Spotify.webp', live: 'https://spotystats.vercel.app/', repo: 'https://github.com/alexgasconn/SpotifyStats', stack: ['JavaScript', 'Chart.js', 'Spotify API'],
+    title: 'Spotify Stats', images: [{ src: 'files/Spotify.webp', caption: { en: 'Spotify listening statistics', es: 'Estadísticas de escucha de Spotify', ca: 'Estadístiques d’escolta de Spotify' } }], live: 'https://spotystats.vercel.app/', repo: 'https://github.com/alexgasconn/SpotifyStats', stack: ['JavaScript', 'Chart.js', 'Spotify API'],
     en: {
       category: 'Personal data · Music listening',
       summary: 'An interactive way to explore listening habits through favourite tracks, artists and playlists.',
@@ -330,7 +331,7 @@ window.projectDetails = {
     }
   },
   'whatsapp-analyzer': {
-    title: 'WhatsApp Analyzer', image: 'files/Whatsapp.png', live: 'https://whats-stats.vercel.app/', repo: 'https://github.com/alexgasconn/WhatsAppAnalyzer', stack: ['JavaScript', 'Chart.js', 'HTML', 'CSS'],
+    title: 'WhatsApp Analyzer', images: [{ src: 'files/Whatsapp.png', caption: { en: 'Conversation analysis dashboard', es: 'Panel de análisis de conversaciones', ca: 'Panell d’anàlisi de converses' } }], live: 'https://whats-stats.vercel.app/', repo: 'https://github.com/alexgasconn/WhatsAppAnalyzer', stack: ['JavaScript', 'Chart.js', 'HTML', 'CSS'],
     en: {
       category: 'Personal data · Conversation analysis',
       summary: 'A chat-export analyzer that turns message histories into activity, language and emoji-use summaries.',
@@ -360,7 +361,7 @@ window.projectDetails = {
     }
   },
   'timeline-heatmap': {
-    title: 'Timeline Heatmap', image: 'files/Heatmap.png', live: 'https://alexgasconn.github.io/timeline/', repo: 'https://github.com/alexgasconn/timeline', stack: ['JavaScript', 'Maps', 'HTML', 'CSS'],
+    title: 'Timeline Heatmap', images: [{ src: 'files/Heatmap.png', caption: { en: 'Location history heatmap', es: 'Mapa de calor del historial de ubicaciones', ca: 'Mapa de calor de l’historial d’ubicacions' } }], live: 'https://alexgasconn.github.io/timeline/', repo: 'https://github.com/alexgasconn/timeline', stack: ['JavaScript', 'Maps', 'HTML', 'CSS'],
     en: {
       category: 'Personal data · Geographic visualization',
       summary: 'A map-based view of Google Timeline location history that makes repeated places and movement patterns visible.',
