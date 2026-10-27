@@ -23,6 +23,81 @@
     };
     window.projectPageHref = pageHref;
 
+    const imageExtension = /\.(apng|avif|bmp|gif|jpe?g|png|svg|webp)$/i;
+    const imageCollator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+    let publishedImagePaths;
+
+    function getPublishedImagePaths() {
+        if (!publishedImagePaths) {
+            const controller = new AbortController();
+            const timeout = window.setTimeout(() => controller.abort(), 8000);
+            publishedImagePaths = fetch('https://data.jsdelivr.com/v1/package/gh/alexgasconn/alexgasconn.github.io@main/flat', {
+                signal: controller.signal,
+                headers: { Accept: 'application/json' }
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error(`Image catalog request failed: ${response.status}`);
+                    return response.json();
+                })
+                .then(catalog => Array.isArray(catalog.files)
+                    ? catalog.files.map(file => file.name).filter(name => typeof name === 'string')
+                    : [])
+                .catch(() => null)
+                .finally(() => window.clearTimeout(timeout));
+        }
+        return publishedImagePaths;
+    }
+
+    function discoverProjectImages(project) {
+        const fallback = Array.isArray(project?.images) ? project.images : (project?.image ? [project.image] : []);
+        if (!project?.imageFolder) return Promise.resolve(fallback);
+
+        return getPublishedImagePaths().then(paths => {
+            if (!paths) return fallback;
+            const prefix = `/files/${project.imageFolder}/`;
+            const matchingPaths = paths
+                .filter(path => path.startsWith(prefix) && !path.slice(prefix.length).includes('/') && imageExtension.test(path))
+                .sort(imageCollator.compare);
+            if (!matchingPaths.length) return fallback;
+
+            const fallbackByPath = new Map(fallback.map(entry => {
+                const image = typeof entry === 'string' ? { src: entry } : entry;
+                return [image.src.toLowerCase(), image];
+            }));
+
+            const discovered = matchingPaths.map((path, index) => {
+                const relativePath = path.slice(1);
+                const knownImage = fallbackByPath.get(relativePath.toLowerCase());
+                if (knownImage) return knownImage;
+
+                const encodedPath = relativePath.split('/').map(encodeURIComponent).join('/');
+                const src = window.location.protocol === 'file:'
+                    ? `https://cdn.jsdelivr.net/gh/alexgasconn/alexgasconn.github.io@main/${encodedPath}`
+                    : relativePath;
+                const name = relativePath.split('/').pop().replace(imageExtension, '').replace(/[_-]+/g, ' ').trim();
+                const number = index + 1;
+                return {
+                    src,
+                    caption: {
+                        en: name || `Image ${number}`,
+                        es: name || `Imagen ${number}`,
+                        ca: name || `Imatge ${number}`
+                    }
+                };
+            });
+
+            if (window.location.protocol === 'file:') {
+                const discoveredPaths = new Set(discovered.map(item => item.src.toLowerCase()));
+                fallback.forEach(item => {
+                    const src = typeof item === 'string' ? item : item.src;
+                    if (!discoveredPaths.has(src.toLowerCase())) discovered.push(item);
+                });
+            }
+
+            return discovered;
+        });
+    }
+
     const detailRoot = document.querySelector('#project-detail');
     if (detailRoot) {
         const labels = {
@@ -243,6 +318,22 @@
                 document.querySelector('#detail-repo').hidden = true;
                 return;
             }
+
+            discoverProjectImages(project).then(discoveredImages => {
+                if (!discoveredImages.length) return;
+                const sameImages = discoveredImages.length === images.length
+                    && discoveredImages.every((item, index) => {
+                        const src = typeof item === 'string' ? item : item.src;
+                        const current = typeof images[index] === 'string' ? images[index] : images[index]?.src;
+                        return src === current;
+                    });
+                if (sameImages) return;
+                images = discoveredImages;
+                imageIndex = 0;
+                imageFigure.hidden = false;
+                renderImage();
+                startAutoplay();
+            });
 
             document.title = `${project.title} | Alex Gascón Navarro`;
             document.querySelector('meta[name="description"]').content = copy.summary;

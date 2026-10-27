@@ -1,47 +1,38 @@
 # Project images
 
-Add screenshots to the folder for their project. Use numbered filenames in display order:
+Each project has its own folder under `files/`. Current files include:
 
 ```text
 files/
   TrailNav/TrailNav1.png
-  TrailNav/TrailNav2.png
-  TrekkingPro/TrekkingPro1.png
-  RacePlanner/RacePlanner1.png
-  100Cims/100Cims1.png
+  TrailNav/TrailNav2.jpeg
+  TrailNav/TrailNav3.jpeg
+  TrailNav/TrailNav4.jpeg
+  TrailNav/TrailNav5.jpeg
+  TrekkingPro/TrekkingPro.webp
+  RacePlanner/RacePlanner.webp
+  100Cims/100cims1.png
   Oasis/Oasis1.png
+  Oasis/Oasis2.jpeg
+  Oasis/Oasis3.jpeg
+  Oasis/Oasis4.jpeg
   GPXMaster/GPXMaster1.png
-  GPXAnalyzer/GPXAnalyzer1.png
-  Strav/Strava1.png
-  Strav/Strava2.png
-  PlayerRecommender/Player1.png
-  Transfermarkt/Transfermarkt1.png
-  SpotifyStats/Spotify1.png
-  WhatsAppAnalyzer/WhatsApp1.png
-  TimelineHeatmap/Timeline1.png
+  GPXMaster/GPXMaster2.png
+  GPXAnalyzer/GPX.webp
+  Strav/Strava.png
+  PlayerRecommender/Players.png
+  Transfermarkt/Transfermarkt.webp
+  SpotifyStats/Spotify.webp
+  WhatsAppAnalyzer/Whatsapp.png
+  TimelineHeatmap/Heatmap.png
 ```
 
-GitHub Pages is static and cannot discover files in a folder automatically. After adding a screenshot, register its path in that project's `images` array in `project-details.js`. Keep entries in the order they should appear and provide a caption in English, Spanish and Catalan:
+## Adding images
 
-```js
-images: [
-  {
-    src: 'files/Strav/Strava1.png',
-    caption: {
-      en: 'Training dashboard',
-      es: 'Panel de entrenamiento',
-      ca: 'Panell d’entrenament'
-    }
-  },
-  {
-    src: 'files/Strav/Strava2.png',
-    caption: {
-      en: 'Activity analysis',
-      es: 'Análisis de actividad',
-      ca: 'Anàlisi d’activitat'
-    }
-  }
-]
-```
+On the published GitHub Pages site, each gallery discovers images from its project folder through the public jsDelivr file index. Add images to the folder and push them; no `images` array edit is needed. Newly pushed images appear after the CDN index refreshes.
 
-Use PNG, JPG or WebP. The carousel shows arrows and starts its slideshow when a project has at least two registered images. Existing screenshots in `files/` and the repository root remain in use until replaced in the image arrays.
+Supported extensions are APNG, AVIF, BMP, GIF, JPG/JPEG, PNG, SVG and WebP. Filenames may contain spaces, mixed capitalization or any naming pattern; the carousel sorts them naturally. Captions default to the filename, while known screenshots keep their translated captions.
+
+When opening the site directly with `file://`, browsers cannot enumerate local directories. The preview combines the published file index with the known local fallback images in `project-details.js`. An unpushed local-only image appears automatically on the published site after it is pushed; add a fallback entry only if you need to preview it before publishing.
+
+The carousel shows arrows, a counter and slideshow controls when a project has at least two images. It pauses while hovered or focused, supports keyboard and touch, respects reduced-motion preferences, and uses the registered local images if the remote index is unavailable.
