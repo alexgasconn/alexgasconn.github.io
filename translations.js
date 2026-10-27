@@ -30,6 +30,13 @@
                 '2022 – 2023',
                 '2023'
             ],
+            keySkillsLabel: 'Competencias clave',
+            experienceTags: [
+                ['Java', 'C', 'Valkey / Redis', 'APIs REST', 'Linux / Docker'],
+                ['Python', 'Modelos predictivos', 'Analítica deportiva', 'Pipelines de datos'],
+                ['PHP', 'Python', 'DNS', 'Linux', 'Servicios web'],
+                ['Soporte técnico', 'Resolución de incidencias', 'Atención al cliente', 'Facturación', 'Documentación']
+            ],
             experience: [
                 [
                     'Desarrollo y mantengo componentes y bibliotecas en Java y C para sistemas de telecomunicaciones. Implemento nuevas funciones, corrijo defectos y entrego hotfixes y actualizaciones de software.',
@@ -173,25 +180,25 @@
             footerLink: 'Ver el código fuente en GitHub'
         },
         ca: {
-            title: 'Alex Gascón Navarro | Enginyeria de programari, ciència de dades i esport',
-            description: 'Alex Gascón Navarro és enginyer de programari, especialitzat en ciència de dades, analítica esportiva i productes basats en dades.',
+            title: 'Alex Gascón Navarro | Enginyeria de Software, Ciència de Dades i Esport',
+            description: 'Alex Gascón Navarro és un Enginyer en Xarxes de Telecomunicacions, especialitzat en ciència de dades, analítica esportiva i productes basats en dades.',
             languageLabel: 'Selecciona l\'idioma',
             projectIndexLabel: 'Categories de projectes',
             nav: ['Sobre mi', 'Experiència', 'Projectes', 'Contacte'],
-            heroKicker: 'Enginyer de programari · Ciència de dades · Analítica esportiva',
-            heroTitle: 'Creo programari que transforma les dades esportives en coneixement.',
-            heroIntro: 'Combino enginyeria de programari i anàlisi de dades per convertir informació complexa en eines clares, útils i centrades en l\'esport.',
+            heroKicker: 'Enginyer de Software · Ciència de dades · Analítica esportiva',
+            heroTitle: 'Creo aplicacions que transformen les dades esportives en coneixement.',
+            heroIntro: 'Combino enginyeria de Software i anàlisi de dades per convertir informació complexa en eines clares, útils i centrades en l\'esport.',
             heroWork: 'Veure projectes',
             heroCv: 'Obre el meu CV',
             aboutTitle: 'Sobre mi',
             about: [
-                'Vaig estudiar Enginyeria de Telecomunicacions, però la meva professió és l\'enginyeria de programari. A Indra desenvolupo i mantinc programari per a sistemes de telecomunicacions; fora d\'aquest àmbit, els meus grans interessos són la ciència de dades i l\'analítica esportiva.',
+                'Vaig estudiar Enginyeria de Telecomunicacions, però la meva professió és l\'enginyeria de Software. A Indra desenvolupo i mantinc software per a sistemes de telecomunicacions; fora d\'aquest àmbit, els meus grans interessos són la ciència de dades i l\'analítica esportiva.',
                 'Creo pipelines de dades, eines d\'anàlisi interactiva i productes geoespacials que ajuden a entendre millor les dades de GPS i entrenament. La meva feina abasta mètriques de rendiment, predicció i anàlisi de rutes, a més de l\'enginyeria necessària perquè aquestes eines siguin fiables i útils.',
                 'També vaig cursar estudis de postgrau en Analítica Esportiva a la UPC i Barça Innovation Hub. Com a corredor, ciclista i triatleta, aporto la perspectiva de qui també fa servir les eines que desenvolupa.'
             ],
             experienceTitle: 'Experiència professional',
             roles: [
-                'Enginyer de programari / Enginyer de xarxes',
+                'Enginyer de Software / Enginyer de xarxes',
                 'Col·laborador a temps parcial',
                 'Desenvolupador full-stack de xarxes en pràctiques',
                 'Consultor de suport'
@@ -202,13 +209,20 @@
                 '2022 – 2023',
                 '2023'
             ],
+            keySkillsLabel: 'Competències clau',
+            experienceTags: [
+                ['Java', 'C', 'Valkey / Redis', 'APIs REST', 'Linux / Docker'],
+                ['Python', 'Models predictius', 'Analítica esportiva', 'Pipelines de dades'],
+                ['PHP', 'Python', 'DNS', 'Linux', 'Serveis web'],
+                ['Suport tècnic', 'Resolució d\'incidències', 'Atenció al client', 'Facturació', 'Documentació']
+            ],
             experience: [
                 [
-                    'Desenvolupo i mantinc components i biblioteques en Java i C per a sistemes de telecomunicacions. Implemento funcionalitats, corregeixo defectes i lliuro hotfixes i actualitzacions de programari.',
-                    'Dissenyo, desenvolupo i mantinc APIs REST i integracions amb bases de dades per gestionar dades i connectar components de programari.',
+                    'Desenvolupo i mantinc components i biblioteques en Java i C per a sistemes de telecomunicacions. Implemento funcionalitats, corregeixo defectes i lliuro hotfixes i actualitzacions de software.',
+                    'Dissenyo, desenvolupo i mantinc APIs REST i integracions amb bases de dades per gestionar dades i connectar components de software.',
                     'Creo integracions Java amb Valkey i emmagatzematge compatible amb Redis: gestió de connexions, subscripcions, operacions de dades i biblioteques client.',
                     'Dissenyo plans de prova i implemento proves unitàries i funcionals per validar requisits, comprovar el comportament dels components i detectar regressions abans de cada lliurament.',
-                    'Analitzo requisits de programari, els converteixo en tasques d\'implementació i documento dissenys tècnics, documentació i diagrames de components.',
+                    'Analitzo requisits de software, els converteixo en tasques d\'implementació i documento dissenys tècnics, documentació i diagrames de components.',
                     'Treballo amb Git i GitLab en la gestió de branques, merge requests, integració de codi, dependències i execució de pipelines CI.',
                     'Compilo i valido components amb Maven i Docker en Linux; investigo i resolc incidències d\'execució, integració i compatibilitat.',
                     'Participo en migracions de Java i actualitzacions de dependències, adaptant components a versions noves i resolent incompatibilitats.'
@@ -234,7 +248,7 @@
                 'Bases de dades i emmagatzematge',
                 'Proves i qualitat',
                 'Eines de desenvolupament i compilació',
-                'Enginyeria de programari',
+                'Enginyeria de software',
                 'Tecnologies de xarxa',
                 'Ciència de dades i visualització'
             ],
@@ -339,7 +353,7 @@
             ],
             contactTitle: 'Contacte',
             contactHeadline: 'Construïm alguna cosa útil.',
-            contactText: 'M\'interessen oportunitats en enginyeria de programari, ciència de dades i tecnologia esportiva. Escriu-me per parlar d\'una feina, un producte o una col·laboració.',
+            contactText: 'M\'interessen oportunitats en enginyeria de software, ciència de dades i tecnologia esportiva. Escriu-me per parlar d\'una feina, un producte o una col·laboració.',
             contactCta: 'Escriu a l\'Alex',
             footerCredit: 'Dissenyat i desenvolupat per Alex Gascón Navarro',
             footerLink: 'Veure el codi font a GitHub'
@@ -430,6 +444,9 @@
             panelIds.forEach((id, index) => {
                 setLeadingText(document.querySelector(`#${id} h3`), copy.roles[index]);
                 setContent(document.querySelector(`#${id} .panel-date`), copy.dates[index]);
+                const panel = document.querySelector(`#${id}`);
+                setAttribute(panel.querySelector('.experience-tags'), 'aria-label', copy.keySkillsLabel);
+                setList('span', copy.experienceTags[index], panel.querySelector('.experience-tags'));
                 setList('li', copy.experience[index], document.querySelector(`#${id}`));
             });
 
