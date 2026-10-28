@@ -2,11 +2,11 @@
     const projects = window.projectDetails ?? {};
     const projectIds = new Map([
         ['TrailNav', 'trailnav'],
-        ['Trekking Time', 'trekkingtime-pro'],
-        ['Race Planner Pro', 'race-planner-pro'],
+        ['Trekking Time', 'trekkingtime'],
+        ['Race Planner', 'race-planner'],
         ['100 Cims Map', '100-cims'],
         ['Oasis', 'oasis'],
-        ['GPX Master', 'gpx-master-pro'],
+        ['GPX Master', 'gpx-master'],
         ['GPX Track Analyzer', 'gpx-track-analyzer'],
         ['StravaStats', 'stravastats'],
         ['Player Recommender', 'player-recommender'],

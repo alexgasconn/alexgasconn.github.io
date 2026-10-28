@@ -38,8 +38,8 @@ window.projectDetails = {
             data: 'Els fitxers de ruta, la sessió i els mapes descarregats es queden al navegador; no hi ha comptes ni sincronització remota de rutes. La cobertura offline detallada requereix descarregar la zona corresponent i el navegador pot esborrar l’emmagatzematge. El GPS i la brúixola depenen dels permisos i dels dispositius compatibles.'
         }
     },
-    'trekkingtime-pro': {
-        title: 'Trekking Time', imageFolder: 'TrekkingPro', images: [projectImage('files/TrekkingPro/TrekkingPro.webp', 'Route analysis and planning dashboard', 'Panel de análisis y planificación de rutas', 'Panell d’anàlisi i planificació de rutes')], live: 'https://trekking-pro.vercel.app/', repo: 'https://github.com/alexgasconn/TrekkingPro', stack: ['TypeScript', 'React', 'Leaflet', 'Recharts', 'Open-Meteo'],
+    'trekkingtime': {
+        title: 'Trekking Time', imageFolder: 'TrekkingTime', images: [projectImage('files/TrekkingTime/TrekkingTime.webp', 'Route analysis and planning dashboard', 'Panel de análisis y planificación de rutas', 'Panell d’anàlisi i planificació de rutes')], live: 'https://trekkingtime.vercel.app/', repo: 'https://github.com/alexgasconn/TrekkingTime', stack: ['TypeScript', 'React', 'Leaflet', 'Recharts', 'Open-Meteo'],
         en: {
             category: 'Route analytics · Hiking and trekking',
             summary: 'Turns a GPX file into a route-planning workspace with terrain analysis, elevation visuals and a range of explainable hiking-time estimates.',
@@ -68,8 +68,12 @@ window.projectDetails = {
             data: 'El GPX i els càlculs de ruta es queden al navegador. La consulta opcional a Open-Meteo demana previsió per a la coordenada inicial i la data triada; no representa el temps al llarg de tota la ruta. Les estimacions orienten la planificació, no garanteixen la seguretat.'
         }
     },
-    'race-planner-pro': {
-        title: 'Race Planner Pro', imageFolder: 'RacePlanner', images: [projectImage('files/RacePlanner/RacePlanner.webp', 'Race elevation and pacing plan', 'Desnivel y plan de ritmos de carrera', 'Desnivell i pla de ritmes de cursa')], live: 'https://race-planner-pro.vercel.app/', repo: 'https://github.com/alexgasconn/RacePlanner', stack: ['TypeScript', 'Next.js', 'GPX', 'Chart.js', 'Leaflet'],
+    'race-planner': {
+        title: 'Race Planner', imageFolder: 'RacePlanner', images: [projectImage('files/RacePlanner/RacePlanner1.webp', 'Race elevation and pacing plan', 'Desnivel y plan de ritmos de carrera', 'Desnivell i pla de ritmes de cursa'),
+            projectImage('files/RacePlanner/RacePlanner2.webp', 'Race plan overview', 'Resumen del plan de carrera', 'Resum del pla de cursa'),
+            projectImage('files/RacePlanner/RacePlanner3.webp', 'Race plan details', 'Detalles del plan de carrera', 'Detalls del pla de cursa'),
+            projectImage('files/RacePlanner/RacePlanner4.webp', 'Race plan map view', 'Vista del mapa del plan de carrera', 'Vista del mapa del pla de cursa')
+        ], live: 'https://run-race-planner.vercel.app/', repo: 'https://github.com/alexgasconn/RacePlanner', stack: ['TypeScript', 'Next.js', 'GPX', 'Chart.js', 'Leaflet'],
         en: {
             category: 'Race planning · Trail running',
             summary: 'A terrain-aware pacing planner that turns a route and target finish time into a practical, sector-by-sector race plan.',
@@ -163,7 +167,7 @@ window.projectDetails = {
             data: 'L’aplicació activa no té backend propi ni comptes. Les consultes en línia utilitzen dades públiques d’OpenStreetMap/Overpass; les dades de fonts i mapes locals de Catalunya permeten usar-les sense connexió després de la instal·lació o descàrrega inicial. La cobertura i les etiquetes de potabilitat depenen del mapatge comunitari i poden ser incompletes.'
         }
     },
-    'gpx-master-pro': {
+    'gpx-master': {
         title: 'GPX Master', imageFolder: 'GPXMaster', images: [
             projectImage('files/GPXMaster/GPXMaster1.png', 'Batch selection and track repair tools', 'Selección múltiple y reparación de tracks', 'Selecció múltiple i reparació de tracks'),
             projectImage('files/GPXMaster/GPXMaster2.png', 'Multi-track map editor and statistics', 'Editor cartográfico multirruta y estadísticas', 'Editor cartogràfic multiruta i estadístiques')

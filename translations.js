@@ -111,7 +111,7 @@
                     eyebrow: 'Estrategia de carrera · Trail running',
                     description: 'Crea un plan de carrera por sectores a partir de una ruta GPX y un tiempo objetivo, con ritmos adaptados al terreno, el desnivel y las condiciones de carrera.',
                     actions: ['Abrir app', 'GitHub'],
-                    alt: 'Perfil de desnivel y plan de carrera de Race Planner Pro'
+                    alt: 'Perfil de desnivel y plan de carrera de Race Planner'
                 },
                 {
                     eyebrow: 'Cataluña · Seguimiento de retos',
@@ -292,7 +292,7 @@
                     eyebrow: 'Estratègia de cursa · Trail running',
                     description: 'Crea un pla de cursa per sectors a partir d\'una ruta GPX i un temps objectiu, amb ritmes adaptats al terreny, el desnivell i les condicions de cursa.',
                     actions: ['Obre l\'app', 'GitHub'],
-                    alt: 'Perfil de desnivell i pla de cursa de Race Planner Pro'
+                    alt: 'Perfil de desnivell i pla de cursa de Race Planner'
                 },
                 {
                     eyebrow: 'Catalunya · Seguiment de reptes',

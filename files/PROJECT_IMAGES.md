@@ -9,8 +9,8 @@ files/
   TrailNav/TrailNav3.jpeg
   TrailNav/TrailNav4.jpeg
   TrailNav/TrailNav5.jpeg
-  TrekkingPro/TrekkingPro.webp
-  RacePlanner/RacePlanner.webp
+  TrekkingTime/TrekkingTime.webp
+  RacePlanner/RacePlanner1.webp
   100Cims/100cims1.png
   Oasis/Oasis1.png
   Oasis/Oasis2.jpeg
