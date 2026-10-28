@@ -168,6 +168,12 @@
                     alt: 'Panel de análisis de conversaciones de WhatsApp'
                 },
                 {
+                    eyebrow: 'Uso de Bicing · Análisis de datos',
+                    description: 'Analiza tus datos de uso de Bicing con estadísticas de actividad, patrones de uso y tendencias de estaciones.',
+                    actions: ['Abrir app', 'GitHub'],
+                    alt: 'Panel de análisis de uso de Bicing'
+                },
+                {
                     eyebrow: 'Historial de ubicación · Mapas',
                     description: 'Visualiza en un mapa interactivo los lugares de Google Timeline y descubre patrones en tu historial de ubicaciones.',
                     actions: ['Ver mapa', 'GitHub'],
@@ -341,6 +347,12 @@
                     description: 'Explora el teu historial d\'escolta i descobreix les teves cançons, artistes i llistes preferides amb gràfics interactius.',
                     actions: ['Obre l\'app', 'GitHub'],
                     alt: 'Estadístiques d\'escolta de Spotify'
+                },
+                {
+                    eyebrow: 'Ús de Bicing · Anàlisi de dades',
+                    description: 'Analitza les teves dades d\'ús de Bicing amb estadístiques d\'activitat, patrons d\'ús i tendències d\'estacions.',
+                    actions: ['Obre l\'app', 'GitHub'],
+                    alt: 'Panell d\'anàlisi d\'ús de Bicing'
                 },
                 {
                     eyebrow: 'Patrons de conversa · Anàlisi de text',

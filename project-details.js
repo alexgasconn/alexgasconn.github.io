@@ -350,6 +350,36 @@ window.projectDetails = {
             data: 'L’autorització de Spotify i les dades disponibles a l’API determinen quina informació es mostra. Abans de connectar un compte, convé revisar els permisos sol·licitats i el flux d’autorització vigent.'
         }
     },
+    'bicing-stats': {
+        title: 'Bicing Stats', imageFolder: 'BicingStats', images: [projectImage('files/BicingStats/Bicing1.png', 'Bicing statistics', 'Estadísticas de Bicing', 'Estadístiques de Bicing')], live: 'https://bicing-stats.vercel.app/', repo: 'https://github.com/alexgasconn/BicingStats', stack: ['TypeScript', 'Chart.js'],
+        en: {
+            category: 'Personal data · Bicing usage',
+            summary: 'An interactive way to explore Bicing usage patterns and trends.',
+            challenge: 'Bicing usage data is personal and complex, making it hard to understand as raw logs. Bicing Stats transforms it into visual summaries for easier exploration of patterns and trends.',
+            features: ['Connect Bicing data to surface usage patterns and trends.', 'Use charts to compare station activity and explore usage.', 'Keep the experience focused on personal insights rather than raw data.'],
+            engineering: 'The frontend uses TypeScript and Chart.js to transform Bicing data into interactive visual summaries. The project is intentionally compact: API data, aggregation and chart presentation are the core workflow.',
+            architecture: 'A browser-based TypeScript application integrates with the Bicing API and renders charts with Chart.js.',
+            data: 'Bicing account authorization and the data available from the API determine what can be shown. Users should review Bicing permissions and the application’s current authorization flow before connecting an account.'
+        },
+        es: {
+            category: 'Datos personales · Uso de Bicing',
+            summary: 'Una forma interactiva de explorar patrones y tendencias de uso de Bicing.',
+            challenge: 'Los datos de uso de Bicing son personales y complejos, lo que dificulta su comprensión como registros sin procesar. Bicing Stats los transforma en resúmenes visuales para facilitar la exploración de patrones y tendencias.',
+            features: ['Conecta datos de Bicing para mostrar patrones y tendencias de uso.', 'Utiliza gráficos para comparar la actividad de las estaciones y explorar el uso.', 'Centra la experiencia en los conocimientos personales en lugar de los datos en bruto.'],
+            engineering: 'El frontend utiliza TypeScript y Chart.js para convertir los datos de Bicing en resúmenes visuales interactivos. El proyecto es intencionadamente compacto: datos de API, agregación y presentación gráfica son el flujo de trabajo principal.',
+            architecture: 'Aplicación TypeScript en navegador integrada con la API de Bicing y gráficos renderizados con Chart.js.',
+            data: 'La autorización de la cuenta de Bicing y los datos disponibles en la API determinan qué se puede mostrar. Los usuarios deben revisar los permisos de Bicing y el flujo de autorización actual de la aplicación antes de conectar una cuenta.'
+        },
+        ca: {
+            category: 'Dades personals · Ús de Bicing',
+            summary: 'Una forma interactiva d’explorar patrons i tendències d’ús de Bicing.',
+            challenge: 'Dades d’ús de Bicing són personals i complexes, difícils d’interpretar com a registres sense processar. Bicing Stats els transforma en resums visuals per facilitar l’exploració de patrons i tendències.',
+            features: ['Connecta dades de Bicing per mostrar patrons i tendències d’ús.', 'Utilitza gràfics per comparar l’activitat de les estacions i explorar l’ús.', 'Centra l’experiència en els coneixements personals en lloc de les dades en brut.'],
+            engineering: 'El frontend utilitza TypeScript i Chart.js per convertir les dades de Bicing en resums visuals interactius. El projecte és intencionadament compacte: dades d’API, agregació i presentació gràfica són el flux de treball principal.',
+            architecture: 'Aplicació TypeScript al navegador integrada amb l’API de Bicing i gràfics renderitzats amb Chart.js.',
+            data: 'L’autorització del compte de Bicing i les dades disponibles a l’API determinen què es pot mostrar. Els usuaris han de revisar els permisos de Bicing i el flux d’autorització actual de l’aplicació abans de connectar un compte.'
+        }
+    },
     'whatsapp-analyzer': {
         title: 'WhatsApp Analyzer', imageFolder: 'WhatsAppAnalyzer', images: [projectImage('files/WhatsAppAnalyzer/Whatsapp.png', 'Conversation analysis dashboard', 'Panel de análisis de conversaciones', 'Panell d’anàlisi de converses')], live: 'https://whats-stats.vercel.app/', repo: 'https://github.com/alexgasconn/WhatsAppAnalyzer', stack: ['JavaScript', 'Chart.js', 'HTML', 'CSS'],
         en: {

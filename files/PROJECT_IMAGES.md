@@ -24,6 +24,7 @@ files/
   Transfermarkt/Transfermarkt.webp
   SpotifyStats/Spotify.webp
   WhatsAppAnalyzer/Whatsapp.png
+  BicingStats/Bicing1.png
   TimelineHeatmap/Heatmap.png
 ```
 

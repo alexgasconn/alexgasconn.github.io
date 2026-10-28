@@ -12,6 +12,7 @@
         ['Player Recommender', 'player-recommender'],
         ['Transfermarkt Pipeline', 'transfermarkt-pipeline'],
         ['Spotify Stats', 'spotify-stats'],
+        ['Bicing Stats', 'bicing-stats'],
         ['WhatsApp Analyzer', 'whatsapp-analyzer'],
         ['Timeline Heatmap', 'timeline-heatmap']
     ]);
