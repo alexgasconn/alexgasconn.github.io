@@ -75,7 +75,7 @@ window.projectDetails = {
             projectImage('files/RacePlanner/RacePlanner4.webp', 'Race plan map view', 'Vista del mapa del plan de carrera', 'Vista del mapa del pla de cursa')
         ], live: 'https://run-race-planner.vercel.app/', repo: 'https://github.com/alexgasconn/RacePlanner', stack: ['TypeScript', 'Next.js', 'GPX', 'Chart.js', 'Leaflet'],
         en: {
-            category: 'Race planning · Trail running',
+            category: 'Race planning',
             summary: 'A terrain-aware pacing planner that turns a route and target finish time into a practical, sector-by-sector race plan.',
             challenge: 'A single target pace ignores the climbing, descending and changing demands of a trail course. Race Planner gives runners a route-based way to distribute effort instead of treating every kilometre as equivalent.',
             features: ['Load a GPX route and set a finish-time goal to build a plan broken into course sectors.', 'Use route elevation and terrain context to vary pacing assumptions across the course.', 'Review the course visually through map and chart components, then refine the plan around the race scenario.'],
@@ -84,7 +84,7 @@ window.projectDetails = {
             data: 'The route file and planning inputs are supplied by the user. The displayed plan is an estimate: race-day conditions, terrain, fatigue and aid-station delays can change actual results.'
         },
         es: {
-            category: 'Planificación de carrera · Trail running',
+            category: 'Planificación de carrera',
             summary: 'Planificador de ritmos adaptado al terreno que convierte una ruta y un tiempo objetivo en un plan de carrera práctico por sectores.',
             challenge: 'Un ritmo único ignora las subidas, bajadas y demandas cambiantes de una carrera de montaña. Race Planner permite distribuir el esfuerzo según la ruta, en vez de tratar cada kilómetro como equivalente.',
             features: ['Carga una ruta GPX y define un tiempo final objetivo para generar un plan dividido por sectores.', 'Utiliza el desnivel y el contexto del terreno para variar las hipótesis de ritmo a lo largo del recorrido.', 'Consulta visualmente el trazado mediante mapa y gráficos, y ajusta el plan al escenario de carrera.'],
@@ -93,7 +93,7 @@ window.projectDetails = {
             data: 'El archivo de ruta y los parámetros de planificación los aporta el usuario. El plan es una estimación: las condiciones del día, el terreno, la fatiga y las paradas pueden cambiar el resultado real.'
         },
         ca: {
-            category: 'Planificació de cursa · Trail running',
+            category: 'Planificació de cursa',
             summary: 'Planificador de ritmes adaptat al terreny que converteix una ruta i un temps objectiu en un pla de cursa pràctic per sectors.',
             challenge: 'Un ritme únic ignora les pujades, baixades i demandes canviants d’una cursa de muntanya. Race Planner permet distribuir l’esforç segons la ruta, en lloc de tractar cada quilòmetre com si fos equivalent.',
             features: ['Carrega una ruta GPX i defineix un temps final objectiu per generar un pla dividit per sectors.', 'Utilitza el desnivell i el context del terreny per variar les hipòtesis de ritme al llarg del recorregut.', 'Consulta visualment el traçat amb mapa i gràfics, i ajusta el pla a l’escenari de cursa.'],
