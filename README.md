@@ -22,7 +22,6 @@ This website is built with plain HTML and CSS, styled for clarity and responsive
 - [Player Recommender System](https://github.com/alexgasconn/player-recommender) – Find similar football players with PCA + clustering and FBRef data
 - [Expected Goals Model](https://github.com/alexgasconn/xG-Regression-Model) – Estimate football shot quality using ML + SHAP
 - [RaceTime Predictor](https://alexgasconn.github.io/RaceTimePredictor/) – Predict running times using the Riegel formula
-- [Real-Time Network Metrics](https://github.com/alexgasconn/OONF-Valkey-Metrics) – Monitor network topology and traffic in real time
 
 ---
 
