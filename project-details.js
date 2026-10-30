@@ -3,39 +3,65 @@ const projectImage = (src, en, es, ca) => ({ src, caption: { en, es, ca } });
 // Add screenshots to each images array in the order the carousel should show them.
 window.projectDetails = {
     trailnav: {
-        title: 'TrailNav', imageFolder: 'TrailNav', images: [
+        title: 'TrailNav',
+        imageFolder: 'TrailNav',
+        images: [
             projectImage('files/TrailNav/TrailNav1.png', 'Route map and elevation profile', 'Mapa de ruta y perfil de elevación', 'Mapa de ruta i perfil d’elevació'),
             projectImage('files/TrailNav/TrailNav2.jpeg', 'Route navigation and planning', 'Navegación y planificación de ruta', 'Navegació i planificació de ruta'),
             projectImage('files/TrailNav/TrailNav3.jpeg', 'Emergency location details', 'Datos de ubicación de emergencia', 'Dades d’ubicació d’emergència'),
             projectImage('files/TrailNav/TrailNav4.jpeg', 'Route analysis and ETA', 'Análisis de ruta y tiempo estimado', 'Anàlisi de ruta i temps estimat'),
             projectImage('files/TrailNav/TrailNav5.jpeg', 'Weather along the route', 'Meteorología durante la ruta', 'Meteorologia durant la ruta')
-        ], live: 'https://trail-nav.vercel.app/', repo: 'https://github.com/alexgasconn/TrailNav', stack: ['TypeScript', 'React', 'MapLibre', 'IndexedDB', 'PWA'],
+        ],
+        live: 'https://trail-nav.vercel.app/',
+        repo: 'https://github.com/alexgasconn/TrailNav',
+        stack: ['TypeScript', 'React', 'MapLibre', 'IndexedDB', 'PWA'],
         en: {
-            category: 'Outdoor navigation · Offline-first PWA',
-            summary: 'A route companion for hiking, trail running and mountain biking, designed to keep core route planning and navigation available when coverage disappears.',
-            challenge: 'Outdoor routes often lead beyond reliable mobile coverage. TrailNav brings route files, map preparation, route analysis and an active GPS session together without requiring an account or a custom application server.',
-            features: ['Import GPX, KML and GeoJSON routes, inspect route statistics and elevation profiles, and make non-destructive edits such as trimming or simplifying a track.', 'Download a map area and selected styles to local browser storage before setting out; follow a loaded route with live GPS position, heading and compass cues.', 'Record an activity and export its actual GPS track as GPX. Route estimates and map coverage remain distinct from a guarantee of trail-level detail or turn-by-turn routing.'],
-            engineering: 'Route geometry and analysis are handled in local TypeScript modules. Map matching projects GPS fixes onto the route to estimate progress; route tools preserve the original by saving edited copies. ETA calculations use transparent hiking models rather than a trained prediction service.',
-            architecture: 'A React single-page PWA uses MapLibre for map interaction and IndexedDB for routes, settings and downloaded tiles. Navigation session state is separated from individual screens so changing views does not discard an active session.',
-            data: 'Route files, session state and downloaded tiles are stored in the browser; there is no account or remote route sync. Detailed offline coverage depends on downloading the relevant region in advance, and browser storage can be cleared by the device. GPS and compass availability depend on permissions and hardware.'
+            category: 'Outdoor navigation · Open source · Offline-first PWA',
+            summary: 'A free, open-source GPS navigation app for hiking, trail running and mountain biking, built by an outdoor enthusiast who wanted a better way to navigate his own routes.',
+            challenge: 'I spend a lot of time outdoors, and recording activities and following GPX routes are part of my routine. My Garmin is useful for tracking activities, but its route display is limited: a black background, a partial view of the route and an interface that I find difficult to read at a glance. I also tried navigation apps such as Wikiloc, Komoot and Strava. They all have things I like, but I wanted to bring my favourite features together in one place without relying on paid subscriptions. So I decided to build my own app, designed around how I actually plan and follow routes. This is one of the things I enjoy most about software development: finding a problem in my own daily life and building something that solves it.',
+            features: [
+                'Import GPX, KML and GeoJSON routes, inspect route statistics and elevation profiles, and edit tracks by trimming or simplifying them without overwriting the original.',
+                'Download map areas for offline use, then follow a route with live GPS positioning, heading and compass guidance, even when mobile coverage is unavailable.',
+                'Record outdoor activities and export the actual GPS track as GPX. Analyse routes, estimate arrival times and check weather information along the route.',
+                'Use it without an account, subscription or remote route-sync service. Route files and downloaded maps are stored locally in the browser.'
+            ],
+            engineering: 'Route geometry and analysis run in local TypeScript modules. GPS positions are projected onto the route to estimate progress, while route editing preserves the original track by saving modified copies. ETA calculations use explicit hiking models rather than a trained prediction service.',
+            architecture: 'A React single-page Progressive Web App uses MapLibre for interactive maps and IndexedDB for routes, settings and downloaded map tiles. Navigation session state is kept separate from individual screens, allowing an active session to continue when switching views. The offline-first design keeps core navigation data on the device.',
+            inspiration: 'TrailNav is inspired by my own experience with a Garmin GPS and outdoor navigation apps such as Wikiloc, Komoot and Strava. Each has features I appreciate, but I wanted a clearer route display, useful planning and analysis tools, offline maps and activity recording in one free application. Rather than copying a single product, I built the combination I wanted to use myself.',
+            motivation: 'This is more than a portfolio project: it is an app I built to solve a problem I experience on my own hikes, trail runs and MTB rides. I enjoy using the tools I create, testing them outdoors and improving them based on real needs. I would love for other people to find TrailNav useful too. It will remain free and open source, and contributions, suggestions and improvements from the community are welcome.',
+            data: 'Route files, navigation sessions and downloaded map tiles are stored in the browser; there are no accounts or remote route-sync services. Offline use requires downloading the relevant map area in advance. Browser storage can be cleared by the device, and GPS and compass availability depend on hardware and permissions. Route estimates are aids for planning, not guarantees of arrival time or trail-level map detail.'
         },
         es: {
-            category: 'Navegación outdoor · PWA offline-first',
-            summary: 'Un acompañante de ruta para senderismo, trail running y MTB, pensado para mantener disponibles la planificación y navegación esenciales cuando desaparece la cobertura.',
-            challenge: 'Muchas rutas salen de las zonas con cobertura móvil fiable. TrailNav reúne archivos de ruta, preparación de mapas, análisis y seguimiento GPS sin exigir una cuenta ni un servidor propio.',
-            features: ['Importa rutas GPX, KML y GeoJSON; consulta estadísticas y perfiles de elevación, y edita el recorrido de forma no destructiva, por ejemplo recortándolo o simplificándolo.', 'Descarga previamente zonas de mapa y estilos al almacenamiento local; sigue una ruta cargada con posición GPS, rumbo y referencias de brújula.', 'Graba una actividad y exporta su recorrido GPS real en GPX. Las estimaciones y la cobertura cartográfica no equivalen a detalle garantizado de senderos ni a navegación giro a giro.'],
-            engineering: 'La geometría y el análisis de rutas se procesan en módulos locales de TypeScript. El ajuste GPS proyecta la posición sobre el track para estimar el progreso; las herramientas de edición guardan copias en lugar de sobrescribir el original. La ETA utiliza modelos transparentes de senderismo, no un servicio de predicción entrenado.',
-            architecture: 'PWA de una sola página en React, con MapLibre para la interacción cartográfica e IndexedDB para rutas, ajustes y teselas descargadas. El estado de la sesión de navegación está separado de las pantallas para conservar una sesión activa al cambiar de vista.',
-            data: 'Los archivos de ruta, la sesión y los mapas descargados permanecen en el navegador; no hay cuentas ni sincronización remota de rutas. La cobertura offline detallada requiere descargar la zona correspondiente y el navegador puede borrar el almacenamiento. GPS y brújula dependen de permisos y dispositivos compatibles.'
+            category: 'Navegación outdoor · Open source · PWA offline-first',
+            summary: 'Una aplicación GPS gratuita y de código abierto para senderismo, trail running y MTB, creada por un aficionado a la montaña que quería una forma mejor de navegar por sus propias rutas.',
+            challenge: 'Paso mucho tiempo en la montaña, y registrar actividades y seguir rutas GPX forma parte de mi rutina. Mi Garmin es útil para grabar actividades, pero la visualización de rutas se me queda corta: fondo negro, una vista parcial del recorrido y una interfaz que no me resulta demasiado intuitiva para consultar de un vistazo. También he probado aplicaciones de navegación como Wikiloc, Komoot y Strava. Todas tienen cosas que me gustan, pero quería reunir mis funciones favoritas en una sola aplicación sin depender de suscripciones de pago. Así que decidí desarrollar mi propia herramienta, pensada para la forma en que realmente planifico y sigo mis rutas. Es una de las cosas que más disfruto del desarrollo de software: detectar un problema de mi día a día y construir algo que lo resuelva.',
+            features: [
+                'Importa rutas GPX, KML y GeoJSON, consulta estadísticas y perfiles de elevación, y recorta o simplifica recorridos sin sobrescribir el archivo original.',
+                'Descarga zonas de mapa para utilizarlas sin conexión y sigue rutas con posición GPS en tiempo real, rumbo y referencias de brújula, incluso cuando no hay cobertura móvil.',
+                'Graba actividades outdoor y exporta el track GPS real en GPX. Analiza recorridos, calcula tiempos estimados de llegada y consulta información meteorológica a lo largo de la ruta.',
+                'Utiliza la aplicación sin cuenta, suscripción ni servicio remoto de sincronización de rutas. Los archivos y mapas descargados se almacenan localmente en el navegador.'
+            ],
+            engineering: 'La geometría y el análisis de rutas se procesan en módulos locales de TypeScript. Las posiciones GPS se proyectan sobre el recorrido para estimar el progreso, mientras que la edición conserva la ruta original guardando copias modificadas. Los cálculos de tiempo estimado utilizan modelos explícitos de senderismo, no un servicio de predicción entrenado.',
+            architecture: 'PWA de una sola página desarrollada con React, MapLibre para los mapas interactivos e IndexedDB para almacenar rutas, ajustes y teselas cartográficas descargadas. El estado de navegación se mantiene separado de las pantallas, de modo que una sesión activa puede continuar al cambiar de vista. El diseño offline-first permite mantener los datos esenciales de navegación en el dispositivo.',
+            inspiration: 'TrailNav nace de mi experiencia utilizando un Garmin y aplicaciones de navegación outdoor como Wikiloc, Komoot y Strava. Cada una tiene funciones que valoro, pero quería reunir en una misma herramienta una visualización más clara de las rutas, planificación, análisis, mapas offline y grabación de actividades, todo gratis. En lugar de reproducir una aplicación concreta, desarrollé la combinación de funciones que me gustaría utilizar a mí.',
+            motivation: 'Para mí, TrailNav es mucho más que un proyecto de portfolio: es una aplicación creada para resolver un problema que encuentro en mis propias excursiones, salidas de trail running y rutas en MTB. Me gusta utilizar las herramientas que desarrollo, probarlas en la montaña y mejorarlas a partir de necesidades reales. Me encantaría que otras personas también pudieran encontrar útil TrailNav. Siempre será gratuita y de código abierto, y estará abierta a sugerencias, mejoras y aportaciones de la comunidad.',
+            data: 'Los archivos de ruta, las sesiones de navegación y las teselas descargadas se almacenan en el navegador; no hay cuentas ni servicios remotos de sincronización de rutas. Para utilizar la aplicación sin conexión hay que descargar previamente la zona cartográfica correspondiente. El dispositivo puede borrar el almacenamiento del navegador, y el GPS y la brújula dependen del hardware y los permisos. Las estimaciones de ruta sirven como referencia para planificar, no garantizan la hora de llegada ni el nivel de detalle cartográfico de los senderos.'
         },
         ca: {
-            category: 'Navegació outdoor · PWA offline-first',
-            summary: 'Un company de ruta per a senderisme, trail running i MTB, pensat per mantenir disponibles la planificació i la navegació essencials quan desapareix la cobertura.',
-            challenge: 'Moltes rutes surten de les zones amb cobertura mòbil fiable. TrailNav reuneix fitxers de ruta, preparació de mapes, anàlisi i seguiment GPS sense exigir un compte ni un servidor propi.',
-            features: ['Importa rutes GPX, KML i GeoJSON; consulta estadístiques i perfils d’elevació, i edita el recorregut de manera no destructiva, per exemple retallant-lo o simplificant-lo.', 'Descarrega prèviament zones de mapa i estils a l’emmagatzematge local; segueix una ruta carregada amb posició GPS, rumb i referències de brúixola.', 'Enregistra una activitat i exporta’n el recorregut GPS real en GPX. Les estimacions i la cobertura cartogràfica no equivalen a detall garantit de senders ni a navegació gir a gir.'],
-            engineering: 'La geometria i l’anàlisi de rutes es processen en mòduls locals de TypeScript. L’ajust GPS projecta la posició sobre el track per estimar el progrés; les eines d’edició desen còpies en lloc de sobreescriure l’original. L’ETA utilitza models transparents de senderisme, no un servei de predicció entrenat.',
-            architecture: 'PWA d’una sola pàgina amb React, MapLibre per a la interacció cartogràfica i IndexedDB per a rutes, ajustos i tessel·les descarregades. L’estat de la sessió de navegació està separat de les pantalles per conservar una sessió activa en canviar de vista.',
-            data: 'Els fitxers de ruta, la sessió i els mapes descarregats es queden al navegador; no hi ha comptes ni sincronització remota de rutes. La cobertura offline detallada requereix descarregar la zona corresponent i el navegador pot esborrar l’emmagatzematge. El GPS i la brúixola depenen dels permisos i dels dispositius compatibles.'
+            category: 'Navegació outdoor · Open source · PWA offline-first',
+            summary: 'Una aplicació GPS gratuïta i de codi obert per a senderisme, trail running i MTB, creada per un aficionat a la muntanya que volia una manera millor de navegar per les seves pròpies rutes.',
+            challenge: 'Passo molt de temps a la muntanya, i enregistrar activitats i seguir rutes GPX forma part de la meva rutina. El meu Garmin és útil per enregistrar activitats, però la visualització de rutes em queda curta: fons negre, una vista parcial del recorregut i una interfície que no em resulta gaire intuïtiva per consultar-la d’un cop d’ull. També he provat aplicacions de navegació com Wikiloc, Komoot i Strava. Totes tenen coses que m’agraden, però volia reunir les meves funcions preferides en una sola aplicació sense dependre de subscripcions de pagament. Per això vaig decidir desenvolupar la meva pròpia eina, pensada per a la manera com realment planifico i segueixo les meves rutes. És una de les coses que més m’agraden del desenvolupament de programari: detectar un problema del meu dia a dia i construir alguna cosa que el resolgui.',
+            features: [
+                'Importa rutes GPX, KML i GeoJSON, consulta estadístiques i perfils d’elevació, i retalla o simplifica recorreguts sense sobreescriure el fitxer original.',
+                'Descarrega zones de mapa per utilitzar-les sense connexió i segueix rutes amb posició GPS en temps real, rumb i referències de brúixola, fins i tot quan no hi ha cobertura mòbil.',
+                'Enregistra activitats outdoor i exporta el track GPS real en GPX. Analitza recorreguts, calcula temps estimats d’arribada i consulta informació meteorològica al llarg de la ruta.',
+                'Utilitza l’aplicació sense compte, subscripció ni servei remot de sincronització de rutes. Els fitxers i els mapes descarregats s’emmagatzemen localment al navegador.'
+            ],
+            engineering: 'La geometria i l’anàlisi de rutes es processen en mòduls locals de TypeScript. Les posicions GPS es projecten sobre el recorregut per estimar-ne el progrés, mentre que l’edició conserva la ruta original desant còpies modificades. Els càlculs del temps estimat utilitzen models explícits de senderisme, no un servei de predicció entrenat.',
+            architecture: 'PWA d’una sola pàgina desenvolupada amb React, MapLibre per als mapes interactius i IndexedDB per emmagatzemar rutes, ajustos i tessel·les cartogràfiques descarregades. L’estat de navegació es manté separat de les pantalles, de manera que una sessió activa pot continuar en canviar de vista. El disseny offline-first permet mantenir les dades essencials de navegació al dispositiu.',
+            inspiration: 'TrailNav neix de la meva experiència utilitzant un Garmin i aplicacions de navegació outdoor com Wikiloc, Komoot i Strava. Cadascuna té funcions que valoro, però volia reunir en una mateixa eina una visualització més clara de les rutes, planificació, anàlisi, mapes offline i enregistrament d’activitats, tot gratuït. En lloc de reproduir una aplicació concreta, vaig desenvolupar la combinació de funcions que m’agradaria utilitzar a mi.',
+            motivation: 'Per a mi, TrailNav és molt més que un projecte de portfolio: és una aplicació creada per resoldre un problema que trobo en les meves excursions, sortides de trail running i rutes en MTB. M’agrada utilitzar les eines que desenvolupo, provar-les a la muntanya i millorar-les a partir de necessitats reals. M’encantaria que altres persones també trobessin útil TrailNav. Sempre serà gratuïta i de codi obert, i estarà oberta a suggeriments, millores i aportacions de la comunitat.',
+            data: 'Els fitxers de ruta, les sessions de navegació i les tessel·les descarregades s’emmagatzemen al navegador; no hi ha comptes ni serveis remots de sincronització de rutes. Per utilitzar l’aplicació sense connexió cal descarregar prèviament la zona cartogràfica corresponent. El dispositiu pot esborrar l’emmagatzematge del navegador, i el GPS i la brúixola depenen del maquinari i dels permisos. Les estimacions de ruta serveixen com a referència per planificar, no garanteixen l’hora d’arribada ni el nivell de detall cartogràfic dels senders.'
         }
     },
     'trekkingtime': {
@@ -70,9 +96,9 @@ window.projectDetails = {
     },
     'race-planner': {
         title: 'Race Planner', imageFolder: 'RacePlanner', images: [projectImage('files/RacePlanner/RacePlanner1.webp', 'Race elevation and pacing plan', 'Desnivel y plan de ritmos de carrera', 'Desnivell i pla de ritmes de cursa'),
-            projectImage('files/RacePlanner/RacePlanner2.webp', 'Race plan overview', 'Resumen del plan de carrera', 'Resum del pla de cursa'),
-            projectImage('files/RacePlanner/RacePlanner3.webp', 'Race plan details', 'Detalles del plan de carrera', 'Detalls del pla de cursa'),
-            projectImage('files/RacePlanner/RacePlanner4.webp', 'Race plan map view', 'Vista del mapa del plan de carrera', 'Vista del mapa del pla de cursa')
+        projectImage('files/RacePlanner/RacePlanner2.webp', 'Race plan overview', 'Resumen del plan de carrera', 'Resum del pla de cursa'),
+        projectImage('files/RacePlanner/RacePlanner3.webp', 'Race plan details', 'Detalles del plan de carrera', 'Detalls del pla de cursa'),
+        projectImage('files/RacePlanner/RacePlanner4.webp', 'Race plan map view', 'Vista del mapa del plan de carrera', 'Vista del mapa del pla de cursa')
         ], live: 'https://run-race-planner.vercel.app/', repo: 'https://github.com/alexgasconn/RacePlanner', stack: ['TypeScript', 'Next.js', 'GPX', 'Chart.js', 'Leaflet'],
         en: {
             category: 'Race planning',
@@ -103,35 +129,105 @@ window.projectDetails = {
         }
     },
     '100-cims': {
-        title: '100 Cims Map', imageFolder: '100Cims', images: [projectImage('files/100Cims/100cims1.png', '100 Cims challenge map', 'Mapa del reto 100 Cims', 'Mapa del repte dels 100 Cims')], live: 'https://mapa100cims.vercel.app/', repo: 'https://github.com/alexgasconn/100-Cims-Mapa', stack: ['TypeScript', 'Web Workers', 'deck.gl', 'MapLibre', 'GPX / TCX / FIT'],
+        title: '100 Cims Map',
+        imageFolder: '100Cims',
+        images: [
+            projectImage(
+                'files/100Cims/100cims1.png',
+                '100 Cims challenge map',
+                'Mapa del reto 100 Cims',
+                'Mapa del repte dels 100 Cims'
+            )
+        ],
+        live: 'https://mapa100cims.vercel.app/',
+        repo: 'https://github.com/alexgasconn/100-Cims-Mapa',
+        stack: ['TypeScript', 'Web Workers', 'deck.gl', 'MapLibre', 'GPX / TCX / FIT'],
         en: {
-            category: 'Catalonia · Activity mapping · Challenge tracker',
-            summary: 'An activity map that checks which peaks in the FEEC 100 Cims challenge are crossed by your recorded routes.',
-            challenge: 'Tracking a long-running peak challenge by memory is difficult, especially when activities live in a large Strava export. The app turns route history into a geographic record of peaks visited, with a configurable proximity radius.',
-            features: ['Import a Strava account export ZIP or select standalone GPX, TCX and FIT activity files.', 'See activities and challenge peaks together on an interactive map, with completed-peak totals and geographic breakdowns.', 'Adjust the proximity radius and recompute which peaks a route passes near; the app can show the activity associated with a peak.'],
-            engineering: 'Imports are unpacked and parsed in a Web Worker so large files do not block the interface. A spatial grid narrows candidate peaks before Haversine distance checks; route points are sampled to keep the matching workload practical.',
-            architecture: 'A TypeScript React app uses a worker for file extraction, format parsing and peak matching. deck.gl renders activity paths and peak markers over a MapLibre map; peak data is bundled with the application.',
-            data: 'Importing and matching are performed locally in the browser; activity files are not uploaded. Supported inputs must contain GPS tracks. Peak detection is based on route proximity, so the configurable radius can produce false positives or misses.'
+            category: 'Catalonia · Outdoor · Personal project',
+            summary: 'A personal mapping tool to track my progress towards completing the FEEC 100 Cims challenge using my Strava activity history.',
+            challenge: 'I love spending time in the mountains, and completing the FEEC 100 Cims challenge is a personal goal of mine. Recording my hikes and other outdoor activities on Strava is part of my daily routine, but keeping track of which peaks I had already visited was difficult. I built this app to connect both things: my recorded routes and my progress towards the challenge. It solves a real problem I had, and it is an application I genuinely use.',
+            features: [
+                'Import a full Strava account export ZIP or select individual GPX, TCX and FIT activity files.',
+                'Visualise recorded activities and the official FEEC 100 Cims peaks together on an interactive map, with completed-peak totals and geographic breakdowns.',
+                'Adjust the proximity radius to identify peaks near recorded routes, recalculate results and see which activity is associated with each peak.'
+            ],
+            engineering: 'Large exports are extracted and parsed in a Web Worker to keep the interface responsive. A spatial grid narrows the candidate peaks before Haversine distance calculations, while route-point sampling helps keep the matching workload manageable.',
+            architecture: 'A React and TypeScript application uses a dedicated worker for file extraction, format parsing and peak matching. deck.gl renders activity paths and peak markers over a MapLibre map, with peak data bundled into the application.',
+            inspiration: 'The project draws on three references: the official FEEC website for the 100 Cims challenge, AllRoutes for inspiration on how recorded routes are displayed, and 100 Cims Map for how peaks are identified and presented. The result is my own tool, built around the specific need to track my personal progress using my Strava history.',
+            data: 'Importing and matching happen locally in the browser; activity files are not uploaded. Supported files must contain GPS tracks. Peak detection is based on route proximity rather than confirmed summit visits, so the configurable radius can produce false positives or miss peaks.',
+            links: [
+                {
+                    label: 'Official FEEC 100 Cims challenge',
+                    url: 'https://www.feec.cat/activitats/100-cims/'
+                },
+                {
+                    label: 'AllRoutes',
+                    url: 'https://allroutes.app/'
+                },
+                {
+                    label: '100 Cims Map',
+                    url: 'https://100-cims.vercel.app/'
+                }
+            ]
         },
         es: {
-            category: 'Cataluña · Mapa de actividades · Seguimiento de retos',
-            summary: 'Un mapa de actividades que detecta qué cimas del reto 100 Cims de la FEEC atraviesan las rutas registradas.',
-            challenge: 'Llevar de memoria el seguimiento de un reto de cimas de largo recorrido es difícil, sobre todo cuando las actividades están dentro de una exportación grande de Strava. La aplicación transforma el historial de rutas en un registro geográfico de cimas visitadas mediante un radio de proximidad configurable.',
-            features: ['Importa el ZIP de exportación de Strava o selecciona archivos de actividad GPX, TCX y FIT.', 'Visualiza actividades y cimas del reto en un mapa interactivo, con totales de cimas completadas y desgloses geográficos.', 'Ajusta el radio de proximidad y recalcula qué cimas quedan cerca de cada ruta; también puede mostrar qué actividad registró una cima.'],
-            engineering: 'La importación, descompresión y lectura de formatos se ejecutan en un Web Worker para evitar bloquear la interfaz con archivos grandes. Una cuadrícula espacial reduce las cimas candidatas antes de calcular distancias Haversine; los puntos de las rutas se muestrean para mantener el coste controlado.',
-            architecture: 'Aplicación React y TypeScript con un worker dedicado a extraer archivos, parsear formatos y detectar cimas. deck.gl dibuja rutas y marcadores sobre un mapa MapLibre; los datos de las cimas se incluyen con la aplicación.',
-            data: 'La importación y la detección se realizan localmente en el navegador; los archivos de actividad no se suben. Los archivos deben contener trazas GPS. La detección se basa en proximidad, por lo que el radio configurable puede producir falsos positivos o dejar cimas sin detectar.'
+            category: 'Cataluña · Montaña · Proyecto personal',
+            summary: 'Una herramienta cartográfica personal para seguir mi progreso en el reto de los 100 Cims de la FEEC a partir de mi historial de actividades de Strava.',
+            challenge: 'Me encanta la montaña y uno de mis objetivos personales es completar el reto de los 100 Cims de la FEEC. Registrar mis excursiones y otras actividades al aire libre en Strava forma parte de mi día a día, pero llevar la cuenta de las cimas que ya había visitado era complicado. Creé esta aplicación para conectar ambas cosas: las rutas que tengo registradas y mi progreso en el reto. Resuelve una necesidad que tenía de verdad y es una aplicación que utilizo habitualmente.',
+            features: [
+                'Importa el ZIP completo de exportación de Strava o selecciona archivos de actividad GPX, TCX y FIT.',
+                'Visualiza las actividades registradas y las cimas oficiales del reto 100 Cims de la FEEC en un mapa interactivo, con totales de cimas completadas y desgloses geográficos.',
+                'Ajusta el radio de proximidad para detectar cimas cercanas a las rutas registradas, recalcula los resultados y consulta qué actividad está asociada a cada cima.'
+            ],
+            engineering: 'La extracción y lectura de exportaciones grandes se ejecutan en un Web Worker para mantener la interfaz fluida. Una cuadrícula espacial reduce las cimas candidatas antes de calcular distancias Haversine, mientras que el muestreo de puntos de las rutas ayuda a mantener controlado el coste de procesamiento.',
+            architecture: 'Aplicación React y TypeScript con un worker dedicado a extraer archivos, interpretar formatos y detectar cimas. deck.gl dibuja las rutas y los marcadores sobre un mapa MapLibre, con los datos de las cimas incluidos en la aplicación.',
+            inspiration: 'El proyecto toma como referencia tres recursos: la web oficial de la FEEC para el reto de los 100 Cims, AllRoutes como inspiración para visualizar las rutas registradas y 100 Cims Map para la identificación y presentación de las cimas. A partir de estas referencias, desarrollé una herramienta propia adaptada a una necesidad concreta: seguir mi progreso personal a partir de mi historial de Strava.',
+            data: 'La importación y la detección se realizan localmente en el navegador; los archivos de actividad no se suben. Los archivos deben contener trazas GPS. La detección se basa en la proximidad a las cimas, no en la confirmación de haber alcanzado la cima, por lo que el radio configurable puede producir falsos positivos o dejar cimas sin detectar.',
+            links: [
+                {
+                    label: 'Reto oficial 100 Cims de la FEEC',
+                    url: 'https://www.feec.cat/activitats/100-cims/'
+                },
+                {
+                    label: 'AllRoutes',
+                    url: 'https://allroutes.app/'
+                },
+                {
+                    label: '100 Cims Map',
+                    url: 'https://100-cims.vercel.app/'
+                }
+            ]
         },
         ca: {
-            category: 'Catalunya · Mapa d’activitats · Seguiment de reptes',
-            summary: 'Un mapa d’activitats que detecta quins cims del repte dels 100 Cims de la FEEC travessen les rutes enregistrades.',
-            challenge: 'Fer el seguiment de memòria d’un repte de cims de llarga durada és difícil, sobretot quan les activitats són dins d’una exportació gran de Strava. L’aplicació transforma l’historial de rutes en un registre geogràfic de cims visitats mitjançant un radi de proximitat configurable.',
-            features: ['Importa el ZIP d’exportació de Strava o selecciona fitxers d’activitat GPX, TCX i FIT.', 'Visualitza activitats i cims del repte en un mapa interactiu, amb totals de cims completats i desglossaments geogràfics.', 'Ajusta el radi de proximitat i recalcula quins cims queden a prop de cada ruta; també pot mostrar quina activitat va registrar un cim.'],
-            engineering: 'La importació, descompressió i lectura de formats s’executen en un Web Worker per evitar bloquejar la interfície amb fitxers grans. Una graella espacial redueix els cims candidats abans de calcular distàncies Haversine; els punts de les rutes se mostregen per mantenir el cost controlat.',
-            architecture: 'Aplicació React i TypeScript amb un worker dedicat a extreure fitxers, parsejar formats i detectar cims. deck.gl dibuixa rutes i marcadors sobre un mapa MapLibre; les dades dels cims s’inclouen amb l’aplicació.',
-            data: 'La importació i la detecció es fan localment al navegador; els fitxers d’activitat no es pugen. Els fitxers han de contenir traces GPS. La detecció es basa en proximitat, de manera que el radi configurable pot produir falsos positius o deixar cims sense detectar.'
+            category: 'Catalunya · Muntanya · Projecte personal',
+            summary: 'Una eina cartogràfica personal per seguir el meu progrés en el repte dels 100 Cims de la FEEC a partir del meu historial d’activitats de Strava.',
+            challenge: 'M’encanta la muntanya i un dels meus objectius personals és completar el repte dels 100 Cims de la FEEC. Enregistrar les meves excursions i altres activitats a l’aire lliure a Strava forma part del meu dia a dia, però portar el compte dels cims que ja havia visitat era complicat. Vaig crear aquesta aplicació per connectar totes dues coses: les rutes que tinc enregistrades i el meu progrés en el repte. Resol una necessitat real que tenia i és una aplicació que faig servir habitualment.',
+            features: [
+                'Importa el ZIP complet d’exportació de Strava o selecciona fitxers d’activitat GPX, TCX i FIT.',
+                'Visualitza les activitats enregistrades i els cims oficials del repte dels 100 Cims de la FEEC en un mapa interactiu, amb totals de cims completats i desglossaments geogràfics.',
+                'Ajusta el radi de proximitat per detectar cims a prop de les rutes enregistrades, recalcula els resultats i consulta quina activitat està associada a cada cim.'
+            ],
+            engineering: 'L’extracció i la lectura d’exportacions grans s’executen en un Web Worker per mantenir la interfície fluida. Una graella espacial redueix els cims candidats abans de calcular distàncies Haversine, mentre que el mostreig de punts de les rutes ajuda a mantenir controlat el cost de processament.',
+            architecture: 'Aplicació React i TypeScript amb un worker dedicat a extreure fitxers, interpretar formats i detectar cims. deck.gl dibuixa les rutes i els marcadors sobre un mapa MapLibre, amb les dades dels cims incloses a l’aplicació.',
+            inspiration: 'El projecte pren com a referència tres recursos: el web oficial de la FEEC per al repte dels 100 Cims, AllRoutes com a inspiració per visualitzar les rutes enregistrades i 100 Cims Map per a la identificació i presentació dels cims. A partir d’aquestes referències, vaig desenvolupar una eina pròpia adaptada a una necessitat concreta: seguir el meu progrés personal a partir de l’historial de Strava.',
+            data: 'La importació i la detecció es fan localment al navegador; els fitxers d’activitat no es pugen. Els fitxers han de contenir traces GPS. La detecció es basa en la proximitat als cims, no en la confirmació d’haver-hi arribat, de manera que el radi configurable pot produir falsos positius o deixar cims sense detectar.',
+            links: [
+                {
+                    label: 'Repte oficial dels 100 Cims de la FEEC',
+                    url: 'https://www.feec.cat/activitats/100-cims/'
+                },
+                {
+                    label: 'AllRoutes',
+                    url: 'https://allroutes.app/'
+                },
+                {
+                    label: '100 Cims Map',
+                    url: 'https://100-cims.vercel.app/'
+                }
+            ]
         }
     },
+
     oasis: {
         title: 'Oasis', imageFolder: 'Oasis', images: [
             projectImage('files/Oasis/Oasis1.png', 'Nearby fountains and compass', 'Fuentes cercanas y brújula', 'Fonts properes i brúixola'),
@@ -231,95 +327,288 @@ window.projectDetails = {
         }
     },
     stravastats: {
-        title: 'StravaStats', imageFolder: 'Strav', images: [projectImage('files/Strava/Strava.png', 'Race pace prediction chart', 'Gráfico de predicción de ritmo', 'Gràfic de predicció de ritme')], live: 'https://stravastats.vercel.app/', repo: 'https://github.com/alexgasconn/StravaStats', stack: ['JavaScript ES modules', 'Strava API v3', 'Vercel Functions', 'Chart.js', 'D3.js', 'Leaflet', 'PWA'],
+        title: 'StravaStats',
+        imageFolder: 'Strav',
+        images: [
+            projectImage(
+                'files/Strava/Strava.png',
+                'Race pace prediction chart',
+                'Gráfico de predicción de ritmo',
+                'Gràfic de predicció de ritme'
+            )
+        ],
+        live: 'https://stravastats.vercel.app/',
+        repo: 'https://github.com/alexgasconn/StravaStats',
+        stack: [
+            'JavaScript ES modules',
+            'Strava API v3',
+            'Vercel Functions',
+            'IndexedDB',
+            'Chart.js',
+            'D3.js',
+            'Leaflet',
+            'Open-Meteo API',
+            'Gemini API',
+            'PWA'
+        ],
         en: {
-            category: 'Endurance analytics · Training platform',
-            summary: 'A free, feature-rich Strava analytics platform designed to put premium-style training insights within reach of every athlete.',
-            challenge: 'Activity history is easy to collect but difficult to turn into a coherent picture of training load, consistency, performance, equipment wear and sport-specific trends. StravaStats brings those questions into one analytical workspace.',
-            features: ['Explore 13 focused areas covering training load and consistency, run/bike/swim analysis, athlete profile, race prediction, gear, activity search, calendar, historical weather, maps, annual reports and an optional AI coach.', 'Inspect individual activities at stream level with splits, climbs, route context and derived metrics; export analyzed data as GPX, CSV or JSON.', 'Blend Riegel scaling, VDOT-style performance transfer and personal curve fitting in a configurable race predictor with scenario controls.'],
-            engineering: 'The data pipeline paginates Strava activity history, caches responses with different lifetimes, preprocesses metrics and renders tab-specific summaries. Detailed activity analysis cleans noisy GPS/elevation streams before segmentation and sport-specific calculations. Most analytics run client-side.',
-            architecture: 'A static JavaScript ES-module frontend works with Vercel serverless functions for Strava OAuth, token refresh and API requests. Activity payloads are cached in IndexedDB, while smaller preferences and session metadata use localStorage; charts and maps are rendered with Chart.js, D3 and Leaflet.',
-            data: 'Strava access uses OAuth and a small serverless proxy; there is no application database. The AI coach is optional and uses a Gemini key supplied by the user in the browser. Weather enrichment uses historical Open-Meteo data for geolocated runs. Model outputs are transparent decision support, not medical or performance guarantees.'
+            category: 'Sports analytics · Endurance training · Data visualisation',
+            summary: 'A free, feature-rich sports analytics platform that turns a Strava activity history into an interactive workspace for understanding training load, tracking progress, analysing performance and making better-informed decisions across running, cycling and swimming.',
+
+            challenge: 'I am a regular Strava user and endurance athlete. Over time, activity history becomes a valuable source of information, but the standard interface does not always make it easy to answer more specific questions about training. How has my running volume changed over the last few months? Am I becoming more consistent? Which shoes are approaching the end of their useful life? How does temperature affect my pace? What race time could my recent performances support? I wanted to go beyond individual activity summaries and understand the bigger picture. StravaStats grew into a personal sports analytics project that brings these questions together, using the data athletes already record instead of asking them to maintain spreadsheets or manually export files.',
+
+            features: [
+                'Training dashboard: Track daily training stress, acute and chronic training load (ATL and CTL), training stress balance (TSB), rolling load, activity consistency and progress towards distance, time or activity-count goals.',
+                'Running analytics: Analyse monthly and weekly mileage, frequency, pace distributions, distance and elevation profiles, pace-versus-distance relationships, accumulated volume, personal progression, Eddington numbers, shoe usage and individual performances.',
+                'Cycling analytics: Break down rides by road cycling, MTB, gravel, indoor cycling and other bike types. Examine speed, distance, elevation, climbing ratios, power-versus-speed relationships, weekly trends, accumulated distance and performance by bike.',
+                'Swimming analytics: Separate pool and open-water sessions, analyse pace per 100 metres, estimate pool length from recorded distances and track changes in swimming volume, pace and aerobic efficiency.',
+                'Athlete profile: Explore training zones, personal records, activity frequency, start-time distributions, group sizes and training patterns by day of the week, month, season and year.',
+                'Race predictor: Estimate potential race times using personal bests, Riegel scaling, VDOT-style performance transfer and personal curve fitting. Adjust the contribution of different models and compare conservative, moderate and aggressive scenarios.',
+                'Equipment tracking: Monitor mileage, usage frequency, first and last use, average pace and estimated remaining lifespan for running shoes, bikes and other registered equipment.',
+                'Activity search and calendar: Search and filter activities by sport, name, date, distance, duration, heart rate and training load. Browse week, month and year views to identify streaks, training gaps and changes in routine.',
+                'Weather analysis: Enrich geolocated runs with historical weather data and investigate relationships between pace and temperature, rainfall, wind, humidity, cloud cover and other environmental conditions.',
+                'Interactive maps: Display recorded routes and activity-density heatmaps, filter by sport and date, and explore where training takes place.',
+                'Annual reports: Generate a year-in-sport retrospective with distance, duration, elevation gain, activity counts, active days, longest sessions, monthly volume, top weeks and year-over-year comparisons.',
+                'Detailed activity analysis: Inspect individual activities using GPS, elevation, heart-rate, speed, cadence and other available streams. Examine splits, climbs, stops, segments, fatigue indicators and sport-specific metrics, then export analysed data as GPX, CSV or JSON.',
+                'Optional AI coach: Ask questions about your training history through a conversational interface that uses summaries of your activities, performance indicators, equipment and recent training volume as context.'
+            ],
+
+            engineering: 'The project includes a complete data-processing pipeline rather than relying exclusively on the metrics returned by Strava. Activity history is retrieved through paginated API requests, validated, cached and enriched with derived fields. The preprocessing layer handles missing values, GPS anomalies, elevation outliers, speed spikes, sport-specific pace calculations and training-load estimates. Detailed activity analysis reconstructs structured tracks from individual streams before applying filtering, segmentation, climb and stop detection, and sport-specific analysis. Derived metrics include aerobic efficiency, rolling training volume, training-load indicators and performance-related features. The pipeline uses deterministic formulas and explicit heuristics wherever possible, keeping calculations inspectable and allowing results to be recomputed from the underlying activity data.',
+
+            architecture: 'The application uses a static frontend built with native JavaScript ES modules, supported by Vercel serverless functions for Strava OAuth, token refresh and API requests. Dedicated API endpoints retrieve athlete information, training zones, activity history, gear metadata, individual activity details and activity streams. Most preprocessing, aggregation and visualisation happens in the browser. IndexedDB stores cached activity payloads, while localStorage holds smaller items such as preferences, session metadata and cache timestamps. The interface is organised into 13 specialised tabs, with dedicated pages for detailed activity analysis. Chart.js handles most charts, D3.js provides additional visualisation capabilities, and Leaflet renders interactive maps and activity heatmaps. A service worker and web app manifest provide installability and static-asset caching.',
+
+            analytics: 'The analytical layer combines time-series processing, statistical summaries, geospatial calculations and sport-specific models. Training-load calculations include daily training stress, 7-day acute load, 42-day chronic load and training stress balance. The race predictor combines Riegel scaling, VDOT-style estimates, direct personal-best matching and individual curve fitting. Activity analysis includes GPS spike interpolation, altitude anomaly filtering, smoothing of noisy streams, climb and stop detection, route segmentation and derived physiological or fatigue indicators. Weather enrichment joins running activities with historical environmental data based on their recorded locations and times. These methods are designed to be understandable and useful for personal analysis; they are not presented as clinically validated models or guaranteed race predictions.',
+
+            data: 'Strava authentication uses OAuth 2.0, with token exchange and refresh handled by the serverless API layer. There is no application database: activity caches, preferences and analysis state are stored in the browser. Historical weather data comes from Open-Meteo. The optional AI coach connects to Gemini using an API key supplied by the user, which is stored in browser localStorage. Most analytical calculations run locally after the data has been retrieved. Results depend on the quality and completeness of the original activities, available GPS and sensor streams, and the assumptions behind each model. Training-load indicators, fatigue estimates and race predictions should be treated as decision-support tools rather than medical advice or guarantees of performance.'
         },
+
         es: {
-            category: 'Analítica de resistencia · Plataforma de entrenamiento',
-            summary: 'Una plataforma gratuita y completa de analítica de Strava, pensada para acercar a cualquier atleta información de entrenamiento al nivel de las funciones premium.',
-            challenge: 'Es fácil acumular actividades, pero cuesta convertirlas en una visión coherente de carga, constancia, rendimiento, desgaste del material y tendencias por deporte. StravaStats reúne esas preguntas en un único espacio de análisis.',
-            features: ['Explora 13 áreas: carga y constancia, análisis de running/ciclismo/natación, perfil del atleta, predicción de carreras, material, buscador, calendario, clima histórico, mapas, informes anuales y asistente de IA opcional.', 'Analiza actividades individuales al nivel de sus streams, con parciales, subidas, contexto geográfico y métricas derivadas; exporta datos a GPX, CSV o JSON.', 'Combina escalado de Riegel, transferencia de rendimiento al estilo VDOT y ajuste de curvas personales en un predictor configurable con escenarios.'],
-            engineering: 'El pipeline pagina el historial de Strava, aplica cachés con distintas duraciones, calcula métricas derivadas y genera resúmenes por pestaña. El análisis detallado limpia ruido GPS y altimétrico antes de segmentar y aplicar cálculos específicos de cada deporte. La mayor parte de la analítica se ejecuta en cliente.',
-            architecture: 'Frontend estático con módulos JavaScript y funciones serverless de Vercel para OAuth de Strava, renovación de tokens y llamadas a la API. Las actividades se guardan en caché en IndexedDB; preferencias y metadatos de sesión usan localStorage. Chart.js, D3 y Leaflet renderizan gráficos y mapas.',
-            data: 'El acceso a Strava utiliza OAuth y un pequeño proxy serverless; no hay base de datos de la aplicación. El asistente IA es opcional y utiliza una clave Gemini que aporta el usuario en el navegador. El enriquecimiento meteorológico consulta datos históricos de Open-Meteo para carreras geolocalizadas. Los modelos orientan decisiones, no garantizan rendimiento ni salud.'
+            category: 'Analítica deportiva · Entrenamiento de resistencia · Visualización de datos',
+
+            summary: 'Una plataforma gratuita de analítica deportiva que transforma el historial de Strava en un espacio interactivo para entender la carga de entrenamiento, seguir la evolución del rendimiento y analizar actividades de running, ciclismo y natación.',
+
+            challenge: 'Soy usuario habitual de Strava y practico deportes de resistencia. Con el tiempo, el historial de actividades se convierte en una fuente de información muy valiosa, pero la interfaz habitual no siempre permite responder fácilmente a preguntas más concretas sobre el entrenamiento. ¿Cómo ha evolucionado mi volumen de running en los últimos meses? ¿Estoy entrenando con más regularidad? ¿Qué zapatillas se acercan al final de su vida útil? ¿Cómo afecta la temperatura a mi ritmo? ¿Qué marca podría conseguir en una carrera según mis últimos resultados? Quería ir más allá del resumen de cada actividad y entender el conjunto. StravaStats nació como un proyecto personal de analítica deportiva para reunir estas respuestas utilizando los datos que los deportistas ya registran, sin tener que mantener hojas de cálculo ni exportar archivos manualmente.',
+
+            features: [
+                'Dashboard de entrenamiento: Consulta la carga diaria, la carga aguda y crónica (ATL y CTL), el balance de entrenamiento (TSB), las tendencias de carga, la regularidad y el progreso hacia objetivos de distancia, tiempo o número de actividades.',
+                'Analítica de running: Analiza kilómetros semanales y mensuales, frecuencia, distribuciones de ritmo, distancia, desnivel, relaciones entre ritmo y distancia, volumen acumulado, progresión personal, números de Eddington, uso de zapatillas y mejores actividades.',
+                'Analítica de ciclismo: Desglosa las salidas por carretera, MTB, gravel, ciclismo indoor y otros tipos de bicicleta. Examina velocidad, distancia, desnivel, ratios de ascenso, relaciones entre potencia y velocidad, tendencias semanales y rendimiento por bicicleta.',
+                'Analítica de natación: Separa piscina y aguas abiertas, analiza el ritmo por cada 100 metros, estima la longitud de piscina a partir de las distancias registradas y sigue la evolución del volumen, el ritmo y la eficiencia aeróbica.',
+                'Perfil del deportista: Explora zonas de entrenamiento, marcas personales, frecuencia de actividad, horarios de salida, tamaño de los grupos y patrones por día de la semana, mes, temporada y año.',
+                'Predictor de carreras: Estima marcas potenciales mediante los récords personales, el modelo de Riegel, transferencias de rendimiento al estilo VDOT y ajuste de curvas personales. Permite modificar la contribución de cada modelo y comparar escenarios conservadores, moderados y agresivos.',
+                'Seguimiento del material: Controla kilómetros, frecuencia de uso, primera y última utilización, ritmo medio y vida útil estimada de zapatillas, bicicletas y otros elementos registrados.',
+                'Buscador y calendario: Busca y filtra actividades por deporte, nombre, fecha, distancia, duración, frecuencia cardíaca y carga de entrenamiento. Consulta vistas semanales, mensuales y anuales para identificar rachas, interrupciones y cambios de rutina.',
+                'Análisis meteorológico: Enriquece las actividades de running geolocalizadas con datos meteorológicos históricos para estudiar la relación entre ritmo, temperatura, lluvia, viento, humedad, nubosidad y otras condiciones ambientales.',
+                'Mapas interactivos: Visualiza las rutas registradas y los mapas de calor de densidad de actividades, filtra por deporte y fecha y analiza dónde se concentra el entrenamiento.',
+                'Informes anuales: Genera un resumen del año deportivo con distancia, tiempo, desnivel, número de actividades, días activos, sesiones más largas, volumen mensual, mejores semanas y comparativas entre años.',
+                'Análisis detallado de actividades: Examina actividades individuales utilizando los datos GPS, altitud, frecuencia cardíaca, velocidad, cadencia y otros streams disponibles. Analiza parciales, subidas, paradas, segmentos e indicadores de fatiga, y exporta los resultados en GPX, CSV o JSON.',
+                'Asistente de IA opcional: Consulta tu historial de entrenamiento mediante una interfaz conversacional que utiliza como contexto resúmenes de actividades, indicadores de rendimiento, material y volumen reciente.'
+            ],
+
+            engineering: 'El proyecto incorpora un pipeline completo de procesamiento de datos, en lugar de depender únicamente de las métricas proporcionadas por Strava. El historial se obtiene mediante peticiones paginadas a la API, se valida, se almacena en caché y se enriquece con métricas derivadas. La capa de preprocesamiento gestiona valores ausentes, anomalías GPS, errores de altitud, picos de velocidad, cálculos de ritmo específicos de cada deporte y estimaciones de carga de entrenamiento. El análisis detallado reconstruye tracks estructurados a partir de los streams de cada actividad y aplica filtrado, segmentación, detección de subidas y paradas, y análisis específicos por deporte. Entre las métricas calculadas se incluyen la eficiencia aeróbica, las tendencias de volumen, los indicadores de carga y las variables relacionadas con el rendimiento. Se utilizan fórmulas deterministas y heurísticas explícitas siempre que es posible, de modo que los cálculos sean comprensibles y puedan volver a obtenerse a partir de los datos originales.',
+
+            architecture: 'La aplicación utiliza un frontend estático desarrollado con módulos JavaScript nativos y funciones serverless de Vercel para gestionar OAuth de Strava, renovar tokens y realizar peticiones a la API. Hay endpoints específicos para obtener información del deportista, zonas de entrenamiento, historial de actividades, material, detalles de actividades y streams. La mayor parte del procesamiento, las agregaciones y las visualizaciones se ejecuta en el navegador. IndexedDB almacena las actividades en caché, mientras que localStorage guarda preferencias, metadatos de sesión y marcas temporales de la caché. La interfaz se organiza en 13 secciones especializadas, además de páginas dedicadas al análisis detallado de actividades. Chart.js gestiona la mayoría de los gráficos, D3.js aporta funciones adicionales de visualización y Leaflet permite representar mapas interactivos y mapas de calor. Un service worker y un manifiesto PWA permiten instalar la aplicación y mantener en caché los recursos estáticos.',
+
+            analytics: 'La capa analítica combina procesamiento de series temporales, estadística descriptiva, cálculos geoespaciales y modelos específicos de cada deporte. Los cálculos de carga incluyen el estrés diario, la carga aguda de 7 días, la carga crónica de 42 días y el balance de entrenamiento. El predictor de carreras combina el modelo de Riegel, estimaciones al estilo VDOT, comparación directa con marcas personales y ajuste de curvas individuales. El análisis de actividades incorpora interpolación de errores GPS, filtrado de anomalías de altitud, suavizado de señales, detección de subidas y paradas, segmentación de recorridos e indicadores fisiológicos o de fatiga. El enriquecimiento meteorológico relaciona las actividades de running con datos ambientales históricos según su ubicación y hora. Estos métodos están pensados para ofrecer información comprensible y útil para el análisis personal, no para presentarse como modelos clínicamente validados ni como predicciones garantizadas.',
+
+            data: 'La autenticación con Strava utiliza OAuth 2.0, con el intercambio y la renovación de tokens gestionados por la capa serverless. No hay una base de datos propia: las cachés de actividades, preferencias y estado del análisis se almacenan en el navegador. Los datos meteorológicos históricos proceden de Open-Meteo. El asistente de IA opcional se conecta a Gemini mediante una clave API proporcionada por el usuario y almacenada en localStorage. La mayoría de los cálculos analíticos se ejecutan localmente una vez recuperados los datos. Los resultados dependen de la calidad y la integridad de las actividades originales, de los streams GPS y de sensores disponibles y de las hipótesis de cada modelo. Los indicadores de carga, las estimaciones de fatiga y las predicciones de carrera son herramientas de apoyo a la toma de decisiones, no consejos médicos ni garantías de rendimiento.'
         },
+
         ca: {
-            category: 'Analítica de resistència · Plataforma d’entrenament',
-            summary: 'Una plataforma gratuïta i completa d’analítica de Strava, pensada per apropar a qualsevol atleta informació d’entrenament de nivell premium.',
-            challenge: 'És fàcil acumular activitats, però costa convertir-les en una visió coherent de càrrega, constància, rendiment, desgast del material i tendències per esport. StravaStats reuneix aquestes preguntes en un únic espai d’anàlisi.',
-            features: ['Explora 13 àrees: càrrega i constància, anàlisi de running/ciclisme/natació, perfil de l’atleta, predicció de curses, equipament, cercador, calendari, clima històric, mapes, informes anuals i assistent d’IA opcional.', 'Analitza activitats individuals al nivell dels streams, amb parcials, pujades, context geogràfic i mètriques derivades; exporta dades a GPX, CSV o JSON.', 'Combina escalat de Riegel, transferència de rendiment a l’estil VDOT i ajust de corbes personals en un predictor configurable amb escenaris.'],
-            engineering: 'El pipeline pagina l’historial de Strava, aplica memòries cau de durades diferents, calcula mètriques derivades i genera resums per pestanya. L’anàlisi detallada neteja soroll GPS i altimètric abans de segmentar i aplicar càlculs específics de cada esport. La major part de l’analítica s’executa al client.',
-            architecture: 'Frontend estàtic amb mòduls JavaScript i funcions serverless de Vercel per a OAuth de Strava, renovació de tokens i crides a l’API. Les activitats es guarden a IndexedDB; preferències i metadades de sessió utilitzen localStorage. Chart.js, D3 i Leaflet renderitzen gràfics i mapes.',
-            data: 'L’accés a Strava utilitza OAuth i un petit proxy serverless; no hi ha base de dades de l’aplicació. L’assistent d’IA és opcional i utilitza una clau Gemini que aporta l’usuari al navegador. L’enriquiment meteorològic consulta dades històriques d’Open-Meteo per a curses geolocalitzades. Els models orienten decisions, no garanteixen rendiment ni salut.'
+            category: 'Analítica esportiva · Entrenament de resistència · Visualització de dades',
+
+            summary: 'Una plataforma gratuïta d’analítica esportiva que transforma l’historial de Strava en un espai interactiu per entendre la càrrega d’entrenament, seguir l’evolució del rendiment i analitzar activitats de running, ciclisme i natació.',
+
+            challenge: 'Soc usuari habitual de Strava i practico esports de resistència. Amb el temps, l’historial d’activitats es converteix en una font d’informació molt valuosa, però la interfície habitual no sempre permet respondre fàcilment preguntes més concretes sobre l’entrenament. Com ha evolucionat el meu volum de running els darrers mesos? Estic entrenant amb més regularitat? Quines sabatilles s’acosten al final de la seva vida útil? Com afecta la temperatura al meu ritme? Quina marca podria aconseguir en una cursa segons els meus últims resultats? Volia anar més enllà del resum de cada activitat i entendre el conjunt. StravaStats va néixer com un projecte personal d’analítica esportiva per reunir aquestes respostes utilitzant les dades que els esportistes ja enregistren, sense haver de mantenir fulls de càlcul ni exportar fitxers manualment.',
+
+            features: [
+                'Dashboard d’entrenament: Consulta la càrrega diària, la càrrega aguda i crònica (ATL i CTL), el balanç d’entrenament (TSB), les tendències de càrrega, la regularitat i el progrés cap a objectius de distància, temps o nombre d’activitats.',
+                'Analítica de running: Analitza quilòmetres setmanals i mensuals, freqüència, distribucions de ritme, distància, desnivell, relacions entre ritme i distància, volum acumulat, progressió personal, nombres d’Eddington, ús de sabatilles i millors activitats.',
+                'Analítica de ciclisme: Desglossa les sortides per carretera, MTB, gravel, ciclisme indoor i altres tipus de bicicleta. Examina velocitat, distància, desnivell, ràtios d’ascens, relacions entre potència i velocitat, tendències setmanals i rendiment per bicicleta.',
+                'Analítica de natació: Separa piscina i aigües obertes, analitza el ritme per cada 100 metres, estima la longitud de la piscina a partir de les distàncies enregistrades i segueix l’evolució del volum, el ritme i l’eficiència aeròbica.',
+                'Perfil de l’esportista: Explora zones d’entrenament, marques personals, freqüència d’activitat, horaris de sortida, mida dels grups i patrons per dia de la setmana, mes, temporada i any.',
+                'Predictor de curses: Estima marques potencials mitjançant els rècords personals, el model de Riegel, transferències de rendiment a l’estil VDOT i ajust de corbes personals. Permet modificar la contribució de cada model i comparar escenaris conservadors, moderats i agressius.',
+                'Seguiment del material: Controla quilòmetres, freqüència d’ús, primera i última utilització, ritme mitjà i vida útil estimada de sabatilles, bicicletes i altres elements registrats.',
+                'Cercador i calendari: Cerca i filtra activitats per esport, nom, data, distància, durada, freqüència cardíaca i càrrega d’entrenament. Consulta vistes setmanals, mensuals i anuals per identificar ratxes, interrupcions i canvis de rutina.',
+                'Anàlisi meteorològica: Enriqueix les activitats de running geolocalitzades amb dades meteorològiques històriques per estudiar la relació entre ritme, temperatura, pluja, vent, humitat, nuvolositat i altres condicions ambientals.',
+                'Mapes interactius: Visualitza les rutes enregistrades i els mapes de calor de densitat d’activitats, filtra per esport i data i analitza on es concentra l’entrenament.',
+                'Informes anuals: Genera un resum de l’any esportiu amb distància, temps, desnivell, nombre d’activitats, dies actius, sessions més llargues, volum mensual, millors setmanes i comparatives entre anys.',
+                'Anàlisi detallada d’activitats: Examina activitats individuals utilitzant les dades GPS, altitud, freqüència cardíaca, velocitat, cadència i altres streams disponibles. Analitza parcials, pujades, aturades, segments i indicadors de fatiga, i exporta els resultats en GPX, CSV o JSON.',
+                'Assistent d’IA opcional: Consulta el teu historial d’entrenament mitjançant una interfície conversacional que utilitza com a context resums d’activitats, indicadors de rendiment, material i volum recent.'
+            ],
+
+            engineering: 'El projecte incorpora un pipeline complet de processament de dades, en lloc de dependre únicament de les mètriques proporcionades per Strava. L’historial s’obté mitjançant peticions paginades a l’API, es valida, s’emmagatzema a la memòria cau i s’enriqueix amb mètriques derivades. La capa de preprocessament gestiona valors absents, anomalies GPS, errors d’altitud, pics de velocitat, càlculs de ritme específics de cada esport i estimacions de càrrega d’entrenament. L’anàlisi detallada reconstrueix tracks estructurats a partir dels streams de cada activitat i aplica filtratge, segmentació, detecció de pujades i aturades, i anàlisi específica per esport. Entre les mètriques calculades hi ha l’eficiència aeròbica, les tendències de volum, els indicadors de càrrega i les variables relacionades amb el rendiment. S’utilitzen fórmules deterministes i heurístiques explícites sempre que és possible, de manera que els càlculs siguin comprensibles i es puguin tornar a obtenir a partir de les dades originals.',
+
+            architecture: 'L’aplicació utilitza un frontend estàtic desenvolupat amb mòduls JavaScript natius i funcions serverless de Vercel per gestionar OAuth de Strava, renovar tokens i fer peticions a l’API. Hi ha endpoints específics per obtenir informació de l’esportista, zones d’entrenament, historial d’activitats, material, detalls d’activitats i streams. La major part del processament, les agregacions i les visualitzacions s’executa al navegador. IndexedDB emmagatzema les activitats a la memòria cau, mentre que localStorage desa preferències, metadades de sessió i marques temporals de la memòria cau. La interfície s’organitza en 13 seccions especialitzades, a més de pàgines dedicades a l’anàlisi detallada d’activitats. Chart.js gestiona la majoria dels gràfics, D3.js aporta funcions addicionals de visualització i Leaflet permet representar mapes interactius i mapes de calor. Un service worker i un manifest PWA permeten instal·lar l’aplicació i mantenir a la memòria cau els recursos estàtics.',
+
+            analytics: 'La capa analítica combina processament de sèries temporals, estadística descriptiva, càlculs geoespacials i models específics de cada esport. Els càlculs de càrrega inclouen l’estrès diari, la càrrega aguda de 7 dies, la càrrega crònica de 42 dies i el balanç d’entrenament. El predictor de curses combina el model de Riegel, estimacions a l’estil VDOT, comparació directa amb marques personals i ajust de corbes individuals. L’anàlisi d’activitats incorpora interpolació d’errors GPS, filtratge d’anomalies d’altitud, suavitzat de senyals, detecció de pujades i aturades, segmentació de recorreguts i indicadors fisiològics o de fatiga. L’enriquiment meteorològic relaciona les activitats de running amb dades ambientals històriques segons la ubicació i l’hora. Aquests mètodes estan pensats per oferir informació comprensible i útil per a l’anàlisi personal, no per presentar-se com a models clínicament validats ni com a prediccions garantides.',
+
+            data: 'L’autenticació amb Strava utilitza OAuth 2.0, amb l’intercanvi i la renovació de tokens gestionats per la capa serverless. No hi ha una base de dades pròpia: les memòries cau d’activitats, les preferències i l’estat de l’anàlisi s’emmagatzemen al navegador. Les dades meteorològiques històriques provenen d’Open-Meteo. L’assistent d’IA opcional es connecta a Gemini mitjançant una clau API proporcionada per l’usuari i emmagatzemada a localStorage. La majoria dels càlculs analítics s’executen localment un cop recuperades les dades. Els resultats depenen de la qualitat i la integritat de les activitats originals, dels streams GPS i dels sensors disponibles i de les hipòtesis de cada model. Els indicadors de càrrega, les estimacions de fatiga i les prediccions de cursa són eines de suport a la presa de decisions, no consells mèdics ni garanties de rendiment.'
         }
     },
     'player-recommender': {
-        title: 'Player Recommender', imageFolder: 'PlayerRecommender', images: [projectImage('files/PlayerRecommender/Players.png', 'Player comparison dashboard', 'Panel de comparación de jugadores', 'Panell de comparació de jugadors')], live: 'https://player-recommender.streamlit.app/', repo: 'https://github.com/alexgasconn/player-recommender', stack: ['Python', 'Scikit-learn', 'PCA', 'K-means', 'Streamlit'],
+        title: 'Player Recommender',
+        imageFolder: 'PlayerRecommender',
+        images: [
+            projectImage(
+                'files/PlayerRecommender/Players.png',
+                'Player comparison dashboard',
+                'Panel de comparación de jugadores',
+                'Panell de comparació de jugadors'
+            )
+        ],
+        live: 'https://player-recommender.streamlit.app/',
+        repo: 'https://github.com/alexgasconn/player-recommender',
+        stack: ['Python', 'Pandas', 'Scikit-learn', 'Feature Engineering', 'PCA', 'K-means', 'Streamlit'],
+
         en: {
-            category: 'Football analytics · Scouting',
-            summary: 'A player-comparison tool that uses performance statistics to surface footballers with similar profiles.',
-            challenge: 'Scouting data contains many dimensions, and comparing players across all of them manually is slow. The project reduces a player’s statistical profile into a more searchable similarity space and keeps the comparison interpretable with visual summaries.',
-            features: ['Explore FBref player data and select a player profile to find statistically similar candidates.', 'Use PCA to reduce feature dimensionality and K-means clustering to organize player profiles.', 'Compare candidates with interactive radar charts rather than relying on one opaque ranking.'],
-            engineering: 'The workflow combines data preparation, feature selection, dimensionality reduction and unsupervised clustering. Recommendations are similarity aids: the selected features and sample coverage affect which players appear close.',
-            architecture: 'A Python and Streamlit application presents the analysis and interactive comparison views. Scikit-learn provides PCA and K-means; the interface exposes the results as a scouting aid.',
-            data: 'The project is based on FBref football statistics. Similarity indicates resemblance within the selected statistical feature space, not equivalent role, quality, transfer value or guaranteed future performance.'
+            category: 'Sports Data Science · Machine Learning · Football Scouting',
+
+            summary: 'A personal sports data science project that uses player statistics and unsupervised machine learning to identify footballers with similar performance profiles.',
+
+            challenge: 'After completing my postgraduate studies in sports analytics at UPC and Barça Innovation Hub, I wanted to put what I had learned into practice with a concrete football scouting problem. Comparing players across dozens of performance metrics is difficult to do manually. I built this tool to explore how data preparation, feature engineering and machine learning could help identify statistically similar players and make the results easy to interpret.',
+
+            features: [
+                'Explore football player statistics from FBref and select a player to discover candidates with similar statistical profiles.',
+                'Prepare and select performance features to build a meaningful representation of each player.',
+                'Apply PCA to reduce dimensionality and K-means clustering to explore groups of players with similar profiles.',
+                'Compare players through interactive radar charts that make similarities and differences easier to understand.',
+                'Explore how statistical similarity can support player discovery and generate new scouting ideas.'
+            ],
+
+            engineering: 'The main learning experience was taking a sports data science workflow from raw statistics to an interactive tool. The project involved data preparation, feature engineering, feature selection, dimensionality reduction and unsupervised learning. Rather than treating the model as a black box, I wanted to visualize the results and understand why players appeared similar. It was a practical way to experiment with machine learning on a real sports use case.',
+
+            architecture: 'A Python and Streamlit application that combines data processing, Scikit-learn models and interactive visualizations. PCA and K-means support the similarity exploration, while radar charts help users inspect individual player profiles.',
+
+            data: 'The project uses football statistics from FBref. Similarity depends on the selected features and available data, so it should be treated as a starting point for scouting rather than a definitive measure of player quality, tactical role or future performance.'
         },
+
         es: {
-            category: 'Analítica de fútbol · Scouting',
-            summary: 'Herramienta de comparación que utiliza estadísticas de rendimiento para encontrar futbolistas con perfiles similares.',
-            challenge: 'Los datos de scouting tienen muchas dimensiones y compararlos manualmente lleva tiempo. El proyecto transforma el perfil estadístico de un jugador en un espacio de similitud más fácil de explorar y presenta la comparación con visualizaciones interpretables.',
-            features: ['Explora datos de jugadores de FBref y selecciona un perfil para encontrar candidatos estadísticamente parecidos.', 'Aplica PCA para reducir dimensiones y clustering K-means para organizar perfiles.', 'Compara candidatos mediante gráficos radar interactivos en vez de depender de una única clasificación opaca.'],
-            engineering: 'El flujo combina preparación de datos, selección de variables, reducción de dimensionalidad y clustering no supervisado. Las recomendaciones ayudan a explorar similitudes: las variables y la cobertura de datos determinan qué jugadores aparecen próximos.',
-            architecture: 'Aplicación Python y Streamlit con vistas interactivas de análisis y comparación. Scikit-learn aporta PCA y K-means, y la interfaz presenta los resultados como apoyo al scouting.',
-            data: 'El proyecto utiliza estadísticas de fútbol de FBref. La similitud refleja cercanía dentro del espacio estadístico seleccionado, no equivalencia de rol, calidad, valor de mercado o rendimiento futuro garantizado.'
+            category: 'Data Science deportivo · Machine Learning · Scouting de fútbol',
+
+            summary: 'Proyecto personal de Data Science deportivo que utiliza estadísticas de jugadores y machine learning no supervisado para encontrar futbolistas con perfiles de rendimiento similares.',
+
+            challenge: 'Después de terminar el posgrado en Sports Analytics de la UPC y Barça Innovation Hub, quería poner en práctica lo aprendido con un problema concreto de scouting. Comparar jugadores a partir de decenas de métricas de rendimiento es complicado manualmente. Construí esta herramienta para explorar cómo la preparación de datos, la ingeniería de variables y el machine learning podían ayudar a encontrar jugadores estadísticamente similares y presentar los resultados de forma comprensible.',
+
+            features: [
+                'Explora estadísticas de futbolistas de FBref y selecciona un jugador para encontrar candidatos con perfiles estadísticos similares.',
+                'Prepara y selecciona variables de rendimiento para construir una representación útil de cada jugador.',
+                'Aplica PCA para reducir la dimensionalidad y clustering K-means para explorar grupos de jugadores con perfiles parecidos.',
+                'Compara jugadores mediante gráficos radar interactivos que facilitan la interpretación de sus similitudes y diferencias.',
+                'Explora cómo la similitud estadística puede ayudar a descubrir jugadores y generar nuevas ideas para el scouting.'
+            ],
+
+            engineering: 'El principal aprendizaje fue llevar un flujo de Data Science deportivo desde los datos estadísticos hasta una herramienta interactiva. Trabajé con preparación de datos, feature engineering, selección de variables, reducción de dimensionalidad y aprendizaje no supervisado. No quería tratar el modelo como una caja negra: quería visualizar los resultados y entender por qué dos jugadores aparecían como similares. Fue una forma práctica de experimentar con machine learning aplicado a un caso de uso real del deporte.',
+
+            architecture: 'Aplicación desarrollada con Python y Streamlit que combina procesamiento de datos, modelos de Scikit-learn y visualizaciones interactivas. PCA y K-means permiten explorar similitudes, mientras que los gráficos radar ayudan a analizar el perfil de cada jugador.',
+
+            data: 'El proyecto utiliza estadísticas de fútbol de FBref. La similitud depende de las variables seleccionadas y de los datos disponibles, por lo que debe entenderse como un punto de partida para el scouting, no como una medida definitiva de calidad, función táctica o rendimiento futuro.'
         },
+
         ca: {
-            category: 'Analítica de futbol · Scouting',
-            summary: 'Eina de comparació que utilitza estadístiques de rendiment per trobar futbolistes amb perfils similars.',
-            challenge: 'Les dades de scouting tenen moltes dimensions i comparar-les manualment requereix temps. El projecte transforma el perfil estadístic d’un jugador en un espai de similitud més fàcil d’explorar i presenta la comparació amb visualitzacions interpretables.',
-            features: ['Explora dades de jugadors de FBref i selecciona un perfil per trobar candidats estadísticament semblants.', 'Aplica PCA per reduir dimensions i clustering K-means per organitzar perfils.', 'Compara candidats amb gràfics radar interactius en lloc de dependre d’una única classificació opaca.'],
-            engineering: 'El flux combina preparació de dades, selecció de variables, reducció de dimensionalitat i clustering no supervisat. Les recomanacions ajuden a explorar similituds: les variables i la cobertura de dades determinen quins jugadors apareixen a prop.',
-            architecture: 'Aplicació Python i Streamlit amb vistes interactives d’anàlisi i comparació. Scikit-learn aporta PCA i K-means, i la interfície presenta els resultats com a suport al scouting.',
-            data: 'El projecte utilitza estadístiques de futbol de FBref. La similitud reflecteix proximitat dins de l’espai estadístic seleccionat, no equivalència de rol, qualitat, valor de mercat o rendiment futur garantit.'
+            category: 'Data Science esportiva · Machine Learning · Scouting de futbol',
+
+            summary: 'Projecte personal de Data Science esportiva que utilitza estadístiques de jugadors i machine learning no supervisat per trobar futbolistes amb perfils de rendiment similars.',
+
+            challenge: 'Després d’acabar el postgrau en Sports Analytics de la UPC i Barça Innovation Hub, volia posar en pràctica els coneixements adquirits amb un problema concret de scouting. Comparar jugadors a partir de desenes de mètriques de rendiment és complicat manualment. Vaig construir aquesta eina per explorar com la preparació de dades, l’enginyeria de variables i el machine learning podien ajudar a trobar jugadors estadísticament semblants i presentar els resultats d’una manera fàcil d’interpretar.',
+
+            features: [
+                'Explora estadístiques de futbolistes de FBref i selecciona un jugador per trobar candidats amb perfils estadístics similars.',
+                'Prepara i selecciona variables de rendiment per construir una representació útil de cada jugador.',
+                'Aplica PCA per reduir la dimensionalitat i clustering K-means per explorar grups de jugadors amb perfils semblants.',
+                'Compara jugadors mitjançant gràfics radar interactius que faciliten la interpretació de les similituds i diferències.',
+                'Explora com la similitud estadística pot ajudar a descobrir jugadors i generar noves idees per al scouting.'
+            ],
+
+            engineering: 'El principal aprenentatge va ser portar un flux de Data Science esportiva des de les dades estadístiques fins a una eina interactiva. Vaig treballar amb preparació de dades, feature engineering, selecció de variables, reducció de dimensionalitat i aprenentatge no supervisat. No volia tractar el model com una caixa negra: volia visualitzar els resultats i entendre per què dos jugadors apareixien com a similars. Va ser una manera pràctica d’experimentar amb machine learning aplicat a un cas d’ús real de l’esport.',
+
+            architecture: 'Aplicació desenvolupada amb Python i Streamlit que combina processament de dades, models de Scikit-learn i visualitzacions interactives. PCA i K-means permeten explorar similituds, mentre que els gràfics radar ajuden a analitzar el perfil de cada jugador.',
+
+            data: 'El projecte utilitza estadístiques de futbol de FBref. La similitud depèn de les variables seleccionades i de les dades disponibles, de manera que s’ha d’entendre com un punt de partida per al scouting, no com una mesura definitiva de qualitat, funció tàctica o rendiment futur.'
         }
     },
     'transfermarkt-pipeline': {
-        title: 'Transfermarkt Pipeline', imageFolder: 'Transfermarkt', images: [projectImage('files/Transfermarkt/Transfermarkt.webp', 'Player data application', 'Aplicación de datos de jugadores', 'Aplicació de dades de jugadors')], live: null, repo: 'https://github.com/alexgasconn/transfermarkt-scraper-api', stack: ['Python', 'FastAPI', 'Streamlit', 'Data pipelines'],
+        title: 'Transfermarkt Pipeline',
+        imageFolder: 'Transfermarkt',
+        images: [
+            projectImage(
+                'files/Transfermarkt/Transfermarkt.webp',
+                'Player data application',
+                'Aplicación de datos de jugadores',
+                'Aplicació de dades de jugadors'
+            )
+        ],
+        live: null,
+        repo: 'https://github.com/alexgasconn/transfermarkt-scraper-api',
+        stack: ['Python', 'Pandas', 'Web Scraping', 'FastAPI', 'Streamlit', 'Data Pipelines'],
+
         en: {
-            category: 'Football data · API and analytics pipeline',
-            summary: 'An end-to-end workflow that collects football player data, exposes it through an API and makes it available for interactive exploration.',
-            challenge: 'Raw player information is more useful when it can be refreshed, queried and explored through a consistent interface. This project connects the collection, service and visualization layers into one small data product.',
-            features: ['Collect and structure player information from Transfermarkt.', 'Expose processed data through a FastAPI service for application use.', 'Explore the resulting dataset with a Streamlit interface.'],
-            engineering: 'The project separates ingestion from API delivery and analysis UI, making the stages easier to run and inspect independently. The pipeline turns source pages into structured records rather than leaving users to browse isolated profiles.',
-            architecture: 'Python-based data collection feeds a FastAPI backend and a Streamlit presentation layer. The repository is organized around a scraper/API workflow rather than a standalone static dashboard.',
-            data: 'Data is sourced from Transfermarkt and displayed for analysis. Source availability and page structure can change; collected values should be interpreted in the context of their source and retrieval time.'
+            category: 'Sports Data Engineering · Data Science · Football Analytics',
+
+            summary: 'A personal football data project built to practice the full journey from collecting player information to serving structured data through an API and exploring it in an interactive application.',
+
+            challenge: 'After completing my postgraduate studies in sports analytics at UPC and Barça Innovation Hub, I wanted to go beyond analysing an existing dataset and learn how to build the data workflow behind a useful application. Football information is spread across player profiles and web pages, so I explored how to collect it, structure it and make it accessible for further analysis. The result connects data acquisition, an API and an interactive interface in one project.',
+
+            features: [
+                'Collect and structure football player information from Transfermarkt.',
+                'Transform information extracted from web pages into structured records that are easier to query and analyse.',
+                'Expose the collected data through a FastAPI service.',
+                'Explore the resulting dataset through a Streamlit interface.',
+                'Connect data acquisition, backend delivery and visualization in a single end-to-end workflow.'
+            ],
+
+            engineering: 'This project helped me practise the less visible but essential part of data science: getting data into a usable state before analysing it. I worked on the collection and structuring workflow and connected it to an API and a user-facing interface. The main idea was to build something more useful than a one-off notebook: a repeatable data pipeline that makes information available to other parts of an application.',
+
+            architecture: 'A Python-based workflow that collects data from Transfermarkt, exposes it through a FastAPI backend and provides an interactive exploration layer with Streamlit. Separating collection, API delivery and presentation makes the different parts of the data product easier to understand and maintain.',
+
+            data: 'The project uses information from Transfermarkt. Source pages and availability may change, and extracted values should be interpreted in the context of their source and retrieval time. The repository is a learning project focused on data collection and delivery, rather than an official or guaranteed-complete data service.'
         },
+
         es: {
-            category: 'Datos de fútbol · Pipeline de API y analítica',
-            summary: 'Flujo integral que recopila datos de futbolistas, los expone mediante una API y permite explorarlos de forma interactiva.',
-            challenge: 'La información de jugadores resulta más útil cuando se puede actualizar, consultar y explorar desde una interfaz coherente. Este proyecto conecta recopilación, servicio y visualización en un pequeño producto de datos.',
-            features: ['Recopila y estructura información de jugadores de Transfermarkt.', 'Expone los datos procesados mediante un servicio FastAPI.', 'Permite explorar el conjunto de datos resultante con Streamlit.'],
-            engineering: 'El proyecto separa ingesta, entrega mediante API e interfaz de análisis para facilitar la ejecución e inspección de cada etapa. El pipeline convierte páginas de origen en registros estructurados, en lugar de dejar al usuario navegando perfiles aislados.',
-            architecture: 'La extracción de datos en Python alimenta un backend FastAPI y una capa de presentación Streamlit. El repositorio se organiza como flujo scraper/API, no como un dashboard estático independiente.',
-            data: 'Los datos proceden de Transfermarkt y se presentan para su análisis. La disponibilidad de la fuente y la estructura de sus páginas pueden cambiar; conviene interpretar los valores junto con su origen y fecha de extracción.'
+            category: 'Ingeniería de datos deportivos · Data Science · Analítica de fútbol',
+
+            summary: 'Proyecto personal de datos de fútbol para practicar el proceso completo: recopilar información de jugadores, servir datos estructurados mediante una API y explorarlos desde una aplicación interactiva.',
+
+            challenge: 'Después de terminar el posgrado en Sports Analytics de la UPC y Barça Innovation Hub, quería ir más allá de analizar un dataset existente y aprender a construir el flujo de datos que hay detrás de una aplicación útil. La información futbolística está repartida entre perfiles de jugadores y páginas web, así que exploré cómo recopilarla, estructurarla y dejarla disponible para futuros análisis. El resultado conecta la obtención de datos, una API y una interfaz interactiva en un mismo proyecto.',
+
+            features: [
+                'Recopila y estructura información de futbolistas de Transfermarkt.',
+                'Transforma información extraída de páginas web en registros estructurados, más fáciles de consultar y analizar.',
+                'Expone los datos recopilados mediante un servicio FastAPI.',
+                'Permite explorar el conjunto de datos desde una interfaz desarrollada con Streamlit.',
+                'Conecta la obtención de datos, el backend y la visualización en un flujo de trabajo integral.'
+            ],
+
+            engineering: 'Este proyecto me permitió practicar una parte menos visible, pero fundamental, de la Data Science: conseguir que los datos estén en condiciones de utilizarse antes de analizarlos. Trabajé en el proceso de recopilación y estructuración y lo conecté con una API y una interfaz de usuario. La idea era construir algo más útil que un notebook puntual: un pipeline de datos reutilizable que pusiera la información a disposición de otras partes de una aplicación.',
+
+            architecture: 'Flujo de trabajo en Python que recopila datos de Transfermarkt, los expone mediante un backend FastAPI y ofrece una capa de exploración interactiva con Streamlit. Separar la recopilación, la entrega mediante API y la presentación facilita entender y mantener las diferentes partes del producto de datos.',
+
+            data: 'El proyecto utiliza información de Transfermarkt. Las páginas y la disponibilidad de la fuente pueden cambiar, por lo que los valores extraídos deben interpretarse teniendo en cuenta su origen y fecha de obtención. Es un proyecto de aprendizaje centrado en la recopilación y distribución de datos, no un servicio oficial ni una fuente que garantice una cobertura completa.'
         },
+
         ca: {
-            category: 'Dades de futbol · Pipeline d’API i analítica',
-            summary: 'Flux integral que recopila dades de futbolistes, les exposa mitjançant una API i permet explorar-les de manera interactiva.',
-            challenge: 'La informació de jugadors és més útil quan es pot actualitzar, consultar i explorar des d’una interfície coherent. Aquest projecte connecta recopilació, servei i visualització en un petit producte de dades.',
-            features: ['Recopila i estructura informació de jugadors de Transfermarkt.', 'Exposa les dades processades mitjançant un servei FastAPI.', 'Permet explorar el conjunt de dades resultant amb Streamlit.'],
-            engineering: 'El projecte separa ingesta, lliurament mitjançant API i interfície d’anàlisi per facilitar l’execució i inspecció de cada etapa. El pipeline converteix pàgines d’origen en registres estructurats, en lloc de deixar l’usuari navegant per perfils aïllats.',
-            architecture: 'L’extracció de dades en Python alimenta un backend FastAPI i una capa de presentació Streamlit. El repositori s’organitza com un flux scraper/API, no com un dashboard estàtic independent.',
-            data: 'Les dades provenen de Transfermarkt i es presenten per analitzar-les. La disponibilitat de la font i l’estructura de les pàgines poden canviar; convé interpretar els valors juntament amb l’origen i la data d’extracció.'
+            category: 'Enginyeria de dades esportives · Data Science · Analítica de futbol',
+
+            summary: 'Projecte personal de dades de futbol per practicar el procés complet: recopilar informació de jugadors, servir dades estructurades mitjançant una API i explorar-les des d’una aplicació interactiva.',
+
+            challenge: 'Després d’acabar el postgrau en Sports Analytics de la UPC i Barça Innovation Hub, volia anar més enllà d’analitzar un conjunt de dades existent i aprendre a construir el flux de dades que hi ha darrere d’una aplicació útil. La informació futbolística està repartida entre perfils de jugadors i pàgines web, així que vaig explorar com recopilar-la, estructurar-la i deixar-la disponible per a anàlisis posteriors. El resultat connecta l’obtenció de dades, una API i una interfície interactiva en un mateix projecte.',
+
+            features: [
+                'Recopila i estructura informació de futbolistes de Transfermarkt.',
+                'Transforma informació extreta de pàgines web en registres estructurats, més fàcils de consultar i analitzar.',
+                'Exposa les dades recopilades mitjançant un servei FastAPI.',
+                'Permet explorar el conjunt de dades des d’una interfície desenvolupada amb Streamlit.',
+                'Connecta l’obtenció de dades, el backend i la visualització en un flux de treball integral.'
+            ],
+
+            engineering: 'Aquest projecte em va permetre practicar una part menys visible, però fonamental, de la Data Science: aconseguir que les dades estiguin preparades per utilitzar-les abans d’analitzar-les. Vaig treballar en el procés de recopilació i estructuració i el vaig connectar amb una API i una interfície d’usuari. La idea era construir una cosa més útil que un notebook puntual: un pipeline de dades reutilitzable que posés la informació a disposició d’altres parts d’una aplicació.',
+
+            architecture: 'Flux de treball en Python que recopila dades de Transfermarkt, les exposa mitjançant un backend FastAPI i ofereix una capa d’exploració interactiva amb Streamlit. Separar la recopilació, el lliurament mitjançant API i la presentació facilita entendre i mantenir les diferents parts del producte de dades.',
+
+            data: 'El projecte utilitza informació de Transfermarkt. Les pàgines i la disponibilitat de la font poden canviar, de manera que els valors extrets s’han d’interpretar tenint en compte l’origen i la data d’obtenció. És un projecte d’aprenentatge centrat en la recopilació i distribució de dades, no un servei oficial ni una font que garanteixi una cobertura completa.'
         }
     },
+
     'spotify-stats': {
         title: 'Spotify Stats', imageFolder: 'SpotifyStats', images: [projectImage('files/SpotifyStats/Spotify.webp', 'Spotify listening statistics', 'Estadísticas de escucha de Spotify', 'Estadístiques d’escolta de Spotify')], live: 'https://spotystats.vercel.app/', repo: 'https://github.com/alexgasconn/SpotifyStats', stack: ['JavaScript', 'Chart.js', 'Spotify API'],
         en: {
